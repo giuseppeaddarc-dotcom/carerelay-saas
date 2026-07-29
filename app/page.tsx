@@ -156,8 +156,12 @@ export default function Home() {
                 <b aria-hidden="true">+</b>
                 <span>Assistente AI su WhatsApp</span>
               </p>
+              <p className="hero-mission">
+                La nostra missione è dare più autonomia alle persone fragili e più tranquillità
+                a chi ogni giorno se ne prende cura.
+              </p>
               <p className="hero-lead">
-                <strong>CareRelay è l’app in abbonamento per coordinare l’assistenza di una persona cara.</strong>{" "}
+                <strong>CareRelay è l’app per coordinare l’assistenza di una persona cara.</strong>{" "}
                 Riunisce attività, appuntamenti, promemoria, note e responsabilità, aiutando familiari,
                 caregiver e professionisti a collaborare. Puoi usare l’app oppure parlare con
                 l’assistente su WhatsApp, senza cambiare abitudini.

@@ -85,7 +85,8 @@ button { color: inherit; }
 .hero h1 em { display: block; color: var(--aqua-dark); font-family: Georgia, serif; font-weight: 500; }
 .hero-product-line { width: fit-content; max-width: 100%; margin: 24px 0 0; padding: 11px 14px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; border: 1px solid rgba(21, 121, 108, .2); border-radius: 13px; background: rgba(255, 255, 255, .62); color: var(--navy); font-size: 11px; font-weight: 900; letter-spacing: .035em; text-transform: uppercase; }
 .hero-product-line b { color: var(--aqua-dark); font-size: 16px; }
-.hero-lead { max-width: 650px; margin: 22px 0 26px; color: #444a46; font-size: 19px; line-height: 1.62; }
+.hero-mission { max-width: 650px; margin: 25px 0 0; color: var(--navy); font-size: 22px; font-weight: 850; line-height: 1.46; letter-spacing: -.025em; }
+.hero-lead { max-width: 650px; margin: 13px 0 26px; color: #444a46; font-size: 19px; line-height: 1.62; }
 .hero-offer { width: fit-content; margin: 0 0 24px; padding: 13px 16px; display: flex; align-items: center; gap: 14px; border: 1px solid rgba(21, 121, 108, .22); border-radius: 16px; background: rgba(255, 255, 255, .58); }
 .hero-offer strong { color: var(--aqua-dark); font-size: 30px; letter-spacing: -.05em; }
 .hero-offer > span { color: var(--ink); font-size: 12px; font-weight: 850; line-height: 1.35; }
@@ -589,6 +590,7 @@ footer { padding: 55px 0 24px; background: #061423; color: white; }
   .hero-brand-name { margin-bottom: 5px; font-size: 22px; }
   .hero h1 { font-size: clamp(43px, 13vw, 54px); line-height: .88; }
   .hero-product-line { width: 100%; padding: 12px; justify-content: center; text-align: center; }
+  .hero-mission { font-size: 20px; line-height: 1.45; }
   .hero-lead { font-size: 17px; }
   .hero-offer { width: 100%; justify-content: center; }
   .audience-switch { width: 100%; }
