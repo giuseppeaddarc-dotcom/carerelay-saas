@@ -151,11 +151,6 @@ export default function Home() {
                   <h1>La cura, <em>coordinata.</em></h1>
                 </div>
               </div>
-              <p className="hero-product-line">
-                <span>App di coordinamento familiare</span>
-                <b aria-hidden="true">+</b>
-                <span>Assistente AI su WhatsApp</span>
-              </p>
               <p className="hero-mission">
                 La nostra missione è dare più autonomia alle persone fragili e più tranquillità
                 a chi ogni giorno se ne prende cura.
