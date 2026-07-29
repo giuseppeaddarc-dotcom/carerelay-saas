@@ -147,12 +147,12 @@ export default function Home() {
                 <em>coordinata.</em>
               </h1>
               <p className="hero-mission">
-                Più autonomia per chi riceve assistenza. Più tranquillità per chi se ne prende cura.
+                Quando una persona ha bisogno, nessuno dovrebbe chiedersi chi se ne sta occupando.
               </p>
               <p className="hero-lead">
-                <strong>Un solo spazio per organizzare attività, visite, farmaci e responsabilità.</strong>{" "}
-                La famiglia vede tutto nell’app oppure chiede e aggiorna ciò che serve con un
-                semplice messaggio su WhatsApp.
+                <strong>CareGive riunisce il suo cerchio in un unico quadro.</strong>{" "}
+                Visite, farmaci, attività e responsabilità diventano visibili a tutti:
+                nell’app o con un semplice messaggio su WhatsApp.
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#come-funziona">Scopri come funziona <span aria-hidden="true">↓</span></a>
@@ -165,7 +165,7 @@ export default function Home() {
               <div className="product-card-top">
                 <div>
                   <span>Oggi</span>
-                  <strong>Il quadro familiare</strong>
+                  <strong>La giornata di cura</strong>
                 </div>
                 <span className="live-pill"><i /> Cerchio attivo</span>
               </div>
@@ -174,36 +174,36 @@ export default function Home() {
                 <i><b /></i>
               </div>
               <div className="product-timeline">
-                <article><time>10:00</time><span /><p><strong>Visita di controllo</strong><small>Familiare · confermato</small></p><b>✓</b></article>
-                <article><time>16:30</time><span /><p><strong>Spesa</strong><small>Caregiver · in carico</small></p><b>✓</b></article>
-                <article className="pending"><time>20:00</time><span /><p><strong>Promemoria farmaco</strong><small>Da confermare</small></p><b>!</b></article>
+                <article><time>10:00</time><span /><p><strong>Visita di controllo</strong><small>Giulia · confermato</small></p><b>✓</b></article>
+                <article><time>16:30</time><span /><p><strong>Spesa</strong><small>Alina · in carico</small></p><b>✓</b></article>
+                <article className="pending"><time>20:00</time><span /><p><strong>Farmaco della sera</strong><small>Attende conferma</small></p><b>!</b></article>
               </div>
               <div className="whatsapp-peek">
                 <div><span>WhatsApp · Assistente</span><small>ora</small></div>
-                <p className="peek-question">Cosa resta da fare oggi?</p>
-                <p className="peek-answer"><strong>Una cosa.</strong> Il promemoria delle 20:00 è ancora da confermare.</p>
+                <p className="peek-question">Cosa manca oggi?</p>
+                <p className="peek-answer"><strong>Solo una cosa.</strong> Il promemoria delle 20:00 attende conferma. Vuoi avvisare il cerchio?</p>
               </div>
               <div className="product-card-bottom">
-                <span>App per vedere tutto</span>
-                <span>WhatsApp per fare prima</span>
+                <span>Vedi tutto nell’app</span>
+                <span>Agisci da WhatsApp</span>
               </div>
             </div>
           </div>
 
           <div className="shell trust-row" aria-label="Principi del servizio">
-            <div><span>01</span><strong>Una sola regia</strong><small>Attività, persone e informazioni</small></div>
-            <div><span>02</span><strong>Anche su WhatsApp</strong><small>Testo, voce, domande e conferme</small></div>
-            <div><span>03</span><strong>Le persone decidono</strong><small>L’AI assiste, il cerchio resta al comando</small></div>
+            <div><span>01</span><strong>Tutto in un posto</strong><small>Attività, persone e informazioni</small></div>
+            <div><span>02</span><strong>Una domanda basta</strong><small>Testo, voce, risposte e conferme</small></div>
+            <div><span>03</span><strong>Ognuno sa cosa fare</strong><small>L’AI assiste, il cerchio decide</small></div>
           </div>
         </section>
 
         <section className="problem section">
           <div className="shell problem-head">
             <div>
-              <p className="eyebrow">Il problema</p>
-              <h2>La cura quotidiana vive in troppi posti.</h2>
+              <p className="eyebrow">Da dove nasce</p>
+              <h2>Il problema non è voler esserci. È riuscire a coordinarsi.</h2>
             </div>
-            <p>Una nota vocale in chat, una visita sul calendario, un farmaco scritto su un foglietto. Il lavoro invisibile cresce quando nessuno ha lo stesso quadro.</p>
+            <p>Una visita resta in una chat, un farmaco su un foglietto, una commissione nella testa di qualcuno. Così una persona finisce per ricordare tutto, mentre gli altri non sanno dove aiutare.</p>
           </div>
           <div className="shell transformation">
             <div className="chaos-panel">
@@ -224,23 +224,23 @@ export default function Home() {
                 <p><span>✓</span><strong>Farmacia · 18:00</strong><small>In carico alla famiglia</small></p>
                 <p><span>↻</span><strong>Promemoria · 20:00</strong><small>Avviso programmato</small></p>
               </div>
-              <small>Dal rumore ad attività chiare, promemoria e risposte immediate.</small>
+              <small>La stessa famiglia. Meno messaggi da rincorrere. Più responsabilità chiare.</small>
             </div>
           </div>
         </section>
 
         <section className="how section" id="come-funziona">
           <div className="shell section-head">
-            <div><p className="eyebrow">Come funziona</p><h2>WhatsApp per la velocità.<br />L’app per vedere tutto.</h2></div>
-            <p>Non serve imparare un nuovo strumento per ogni piccola operazione. Parli come fai già; il servizio trasforma la richiesta in qualcosa di chiaro e condiviso.</p>
+            <div><p className="eyebrow">Una storia quotidiana</p><h2>Una domanda diventa un’azione.<br />Tutti vedono il risultato.</h2></div>
+            <p>È domani: c’è una visita e nessuno è ancora confermato. Non serve aprire l’app o ricostruire la chat. Basta chiedere come si fa già ogni giorno.</p>
           </div>
 
           <div className="shell channel-stage">
             <article className="channel-copy">
               <span className="channel-number">01</span>
-              <p className="channel-kicker">Senza aprire l’app</p>
-              <h3>Chiedi. Prendi in carico. Conferma.</h3>
-              <p>L’assistente legge solo le attività autorizzate, risponde e prepara l’aggiornamento. La decisione finale resta sempre a una persona.</p>
+              <p className="channel-kicker">Chiedi come parli</p>
+              <h3>“Chi accompagna mamma?”</h3>
+              <p>L’assistente consulta le attività autorizzate e mostra ciò che manca. Una persona si propone, conferma e il cerchio viene aggiornato.</p>
               <div className="demo-tabs" role="tablist" aria-label="Fasi dell’esempio">
                 {["1. Chiedi", "2. Mi occupo io", "3. Confermato"].map((label, index) => (
                   <button
@@ -279,11 +279,11 @@ export default function Home() {
           </div>
 
           <div className="shell app-strip">
-            <div><span className="channel-number">02</span><p className="channel-kicker">L’app completa</p><h3>Il quadro completo, sempre leggibile.</h3></div>
+            <div><span className="channel-number">02</span><p className="channel-kicker">Dopo la conferma</p><h3>Il quadro si aggiorna per tutti.</h3></div>
             <div className="app-strip-list">
-              <p><span>Oggi</span><strong>5 attività · 4 coperte</strong></p>
-              <p><span>Settimana</span><strong>3 appuntamenti</strong></p>
-              <p><span>Cerchio</span><strong>4 persone attive</strong></p>
+              <p><span>Visita</span><strong>Responsabile confermato</strong></p>
+              <p><span>Cerchio</span><strong>Tutti aggiornati</strong></p>
+              <p><span>Promemoria</span><strong>Automatico</strong></p>
             </div>
           </div>
         </section>
@@ -302,13 +302,13 @@ export default function Home() {
               <div className="family-center"><span aria-hidden="true">♥</span><b>Anna</b><small>Nome di esempio</small></div>
             </div>
             <div className="circle-copy">
-              <p className="eyebrow">La persona che ami al centro</p>
-              <h2>Un cerchio di cura.<br />Non una catena di messaggi.</h2>
-              <p>Nel grafico usiamo un nome di esempio. Nel tuo spazio, al centro ci sarà la persona di cui vi prendete cura; familiari, caregiver, badanti, psicologi e specialisti collaboreranno intorno a lei.</p>
+              <p className="eyebrow">La persona al centro</p>
+              <h2>Intorno, ognuno trova il proprio posto.</h2>
+              <p>Nel tuo spazio, familiari, caregiver, badanti, psicologi e specialisti collaborano intorno alla persona assistita. Non tutti devono fare tutto: ognuno vede ciò che gli serve e sa quando può essere utile.</p>
               <div className="permission-list">
-                <div><span>◎</span><p><strong>Un ruolo per ogni persona</strong><small>Accessi diversi, responsabilità leggibili.</small></p></div>
-                <div><span>✓</span><p><strong>Conferme visibili</strong><small>È chiaro chi ha fatto o preso in carico un’attività.</small></p></div>
-                <div><span>↻</span><p><strong>Aggiornamenti condivisi</strong><small>Le informazioni utili arrivano senza rincorrere le chat.</small></p></div>
+                <div><span>◎</span><p><strong>Chi può esserci</strong><small>Ruoli e accessi adatti a ogni persona.</small></p></div>
+                <div><span>✓</span><p><strong>Chi se ne occupa</strong><small>Ogni attività ha un responsabile visibile.</small></p></div>
+                <div><span>↻</span><p><strong>Chi deve sapere</strong><small>Gli aggiornamenti arrivano alle persone giuste.</small></p></div>
               </div>
             </div>
           </div>
@@ -316,8 +316,8 @@ export default function Home() {
 
         <section className="management section">
           <div className="shell section-head">
-            <div><p className="eyebrow">La regia quotidiana</p><h2>Meno cose da ricordare.<br />Più tempo per esserci.</h2></div>
-            <p>Tutto ciò che serve per coordinare la giornata, senza trasformare la cura in un altro lavoro da amministrare.</p>
+            <div><p className="eyebrow">La regia quotidiana</p><h2>Dalla preoccupazione<br />a una giornata che regge.</h2></div>
+            <p>Il servizio non sostituisce la cura. Toglie attrito a chi la rende possibile, facendo emergere cosa serve, chi può farlo e cosa è già stato fatto.</p>
           </div>
           <div className="shell feature-grid">
             {features.map((feature) => (
@@ -331,9 +331,9 @@ export default function Home() {
 
           <div className="shell medication-feature">
             <div className="medication-copy">
-              <p className="eyebrow eyebrow-light">Promemoria farmaci</p>
-              <h3>Il promemoria giusto.<br />Al momento giusto.</h3>
-              <p>Una persona autorizzata inserisce il promemoria e l’orario. Il servizio avvisa sull’app o su WhatsApp, chiede conferma e aggiorna il cerchio familiare.</p>
+              <p className="eyebrow eyebrow-light">Un gesto che conta</p>
+              <h3>Ricordare un farmaco, senza lasciare tutto alla memoria.</h3>
+              <p>Una persona autorizzata inserisce il promemoria. Al momento previsto, il servizio avvisa sull’app o su WhatsApp, chiede conferma e aggiorna il cerchio.</p>
               <div className="medication-flow" aria-label="Inserisci, ricorda, conferma">
                 <span>Inserisci</span><i aria-hidden="true">→</i><span>Ricorda</span><i aria-hidden="true">→</i><span>Conferma</span>
               </div>
@@ -469,11 +469,11 @@ export default function Home() {
 
       <footer>
         <div className="shell footer-grid">
-          <div><a className="brand footer-brand" href="#inizio"><BrandName /><BrandMark className="x-mark-small" /></a><p>Care for someone. Together.</p></div>
+          <div><a className="brand footer-brand" href="#inizio"><BrandName /><BrandMark className="x-mark-small" /></a><p>La cura diventa più semplice quando è condivisa.</p></div>
           <div className="footer-note"><strong>Software in fase di validazione — non è un dispositivo medico.</strong><p>Non usare il servizio per diagnosi, decisioni terapeutiche o richieste di emergenza.</p></div>
           <div className="footer-links"><a href="#come-funziona">Come funziona</a><a href="#cerchio">Il cerchio</a><a href="#pilot">Accesso beta</a></div>
         </div>
-        <div className="shell footer-bottom"><span>© 2026 CareGive X concept</span><span>La persona al centro. Tutto il resto, coordinato.</span></div>
+        <div className="shell footer-bottom"><span>© 2026 CareGive concept</span><span>La persona al centro. Tutto il resto, coordinato.</span></div>
       </footer>
     </main>
   );
