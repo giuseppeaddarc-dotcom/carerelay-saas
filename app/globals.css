@@ -309,6 +309,31 @@ button { color: inherit; }
 .management-grid article > span { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; background: var(--navy); color: var(--aqua); font-size: 18px; font-weight: 900; }
 .management-grid h3 { margin: 42px 0 9px; font-size: 21px; letter-spacing: -.025em; }
 .management-grid p { margin: 0; color: var(--muted); line-height: 1.55; }
+.medication-feature { margin-top: 20px; padding: 36px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 32px 55px; align-items: center; overflow: hidden; border-radius: 28px; background: var(--navy); color: white; }
+.medication-copy h3 { margin: 8px 0 14px; font-size: clamp(32px, 3.5vw, 48px); line-height: 1; letter-spacing: -.045em; }
+.medication-copy > p:not(.eyebrow) { margin: 0; color: #bdc8d0; line-height: 1.6; }
+.medication-flow { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.medication-flow span { padding: 7px 10px; border: 1px solid rgba(99, 215, 198, .22); border-radius: 999px; color: var(--aqua); font-size: 10px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.medication-flow i { color: #7890a2; font-style: normal; }
+.medication-preview { padding: 20px; border: 1px solid rgba(255, 255, 255, .12); border-radius: 21px; background: rgba(255, 255, 255, .07); }
+.medication-time { padding-bottom: 14px; display: grid; grid-template-columns: auto 1fr; align-items: end; border-bottom: 1px solid rgba(255, 255, 255, .1); }
+.medication-time span { color: var(--aqua); font-size: 10px; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+.medication-time strong { justify-self: end; font-size: 22px; line-height: 1; }
+.medication-time small { grid-column: 1 / -1; margin-top: 5px; color: #91a4b3; font-size: 9px; }
+.medication-card { margin-top: 15px; padding: 15px; display: grid; grid-template-columns: 35px 1fr; gap: 12px; border-radius: 15px; background: white; color: var(--ink); }
+.medication-bell { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 11px; background: #e3f7f3; color: var(--aqua-dark); font-size: 11px; box-shadow: inset 0 0 0 7px rgba(99, 215, 198, .22); }
+.medication-card p, .medication-status p { margin: 0; display: grid; gap: 2px; }
+.medication-card small { color: var(--aqua-dark); font-size: 9px; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; }
+.medication-card strong { font-size: 15px; }
+.medication-card p > span { color: var(--muted); font-size: 10px; }
+.medication-actions { margin-top: 9px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.medication-actions span { padding: 10px 8px; border: 1px solid rgba(255, 255, 255, .14); border-radius: 11px; color: #b8c7d2; font-size: 10px; font-weight: 850; text-align: center; }
+.medication-actions span:first-child { border-color: var(--aqua); background: var(--aqua); color: var(--navy); }
+.medication-status { margin-top: 14px; display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: center; }
+.medication-status > span { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: rgba(99, 215, 198, .15); color: var(--aqua); font-size: 12px; font-weight: 900; }
+.medication-status strong { font-size: 11px; }
+.medication-status small { color: #91a4b3; font-size: 9px; }
+.medication-boundary { grid-column: 1 / -1; margin: -8px 0 0; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .1); color: #91a4b3; font-size: 10px; line-height: 1.5; }
 
 .circle-section { background: #e7f4ef; overflow: hidden; }
 .circle-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 90px; align-items: center; }
@@ -561,6 +586,7 @@ footer { padding: 55px 0 24px; background: #061423; color: white; }
   .channel-grid { grid-template-columns: 1fr; }
   .vital-monitor { grid-template-columns: 1fr; }
   .management-grid { grid-template-columns: repeat(2, 1fr); }
+  .medication-feature { grid-template-columns: 1fr; }
   .noise-board { grid-template-columns: repeat(2, 1fr); }
   .ecosystem-grid, .plan-grid, .report-grid { grid-template-columns: 1fr; }
   .device-card { min-height: 390px; }
@@ -615,6 +641,10 @@ footer { padding: 55px 0 24px; background: #061423; color: white; }
   .ask-grid, .management-grid { grid-template-columns: 1fr; }
   .assistant-boundary { grid-template-columns: 1fr; gap: 8px; }
   .management-grid article { min-height: 220px; }
+  .medication-feature { padding: 26px 18px; gap: 28px; border-radius: 24px; }
+  .medication-copy h3 { font-size: 37px; }
+  .medication-preview { padding: 15px; }
+  .medication-boundary { margin-top: -4px; }
   .circle-copy h2 { font-size: 43px; }
   .family-orbit { min-height: 430px; }
   .family-orbit::before { width: 310px; height: 310px; }

@@ -17,8 +17,8 @@ const managementFeatures = [
   },
   {
     icon: "↻",
-    title: "Promemoria quotidiani",
-    body: "Routine e promemoria inseriti dalla famiglia, con conferme leggibili.",
+    title: "Promemoria e farmaci",
+    body: "Orari e routine inseriti dalla famiglia, con conferme leggibili e avvisi al cerchio.",
   },
   {
     icon: "≡",
@@ -354,6 +354,51 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <div className="shell medication-feature">
+            <div className="medication-copy">
+              <p className="eyebrow eyebrow-light">Promemoria farmaci</p>
+              <h3>Il promemoria giusto, al momento giusto.</h3>
+              <p>
+                Una persona autorizzata inserisce il promemoria e l’orario. CareRelay avvisa
+                sull’app o su WhatsApp, chiede conferma e rende l’esito visibile al cerchio familiare.
+              </p>
+              <div className="medication-flow" aria-label="Inserisci, ricorda, conferma">
+                <span>Inserisci</span><i aria-hidden="true">→</i>
+                <span>Ricorda</span><i aria-hidden="true">→</i>
+                <span>Conferma</span>
+              </div>
+            </div>
+            <div className="medication-preview" aria-label="Esempio illustrativo di promemoria farmaco">
+              <div className="medication-time">
+                <span>Oggi</span>
+                <strong>20:00</strong>
+                <small>Promemoria confermato dalla famiglia</small>
+              </div>
+              <div className="medication-card">
+                <span className="medication-bell" aria-hidden="true">●</span>
+                <p>
+                  <small>È il momento del promemoria</small>
+                  <strong>Farmaco della sera</strong>
+                  <span>Voce inserita da Giulia</span>
+                </p>
+              </div>
+              <div className="medication-actions" aria-hidden="true">
+                <span>Fatto</span>
+                <span>Ricordamelo dopo</span>
+              </div>
+              <div className="medication-status">
+                <span aria-hidden="true">✓</span>
+                <p>
+                  <strong>Confermato da Anna</strong>
+                  <small>Il cerchio familiare è aggiornato</small>
+                </p>
+              </div>
+            </div>
+            <p className="medication-boundary">
+              CareRelay ricorda ciò che è stato inserito e confermato. Non prescrive, non modifica
+              dosi e non decide cosa fare in caso di mancata assunzione.
+            </p>
+          </div>
         </section>
 
         <section className="circle-section section" id="cerchio">
@@ -476,7 +521,7 @@ export default function Home() {
                   <ul>
                     <li><span>✓</span>Attività e responsabilità</li>
                     <li><span>✓</span>Appuntamenti e calendario</li>
-                    <li><span>✓</span>Promemoria e routine</li>
+                    <li><span>✓</span>Promemoria, routine e farmaci</li>
                     <li><span>✓</span>Note e documenti condivisi</li>
                   </ul>
                 </div>
