@@ -144,12 +144,23 @@ export default function Home() {
           <div className="hero-orb hero-orb-two" aria-hidden="true" />
           <div className="shell hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow"><span>●</span> App CareRelay + assistente AI su WhatsApp</p>
-              <h1>La cura, <em>coordinata.</em></h1>
+              <div className="hero-brand-lockup">
+                <span className="hero-brand-mark" aria-hidden="true">C</span>
+                <div>
+                  <span className="hero-brand-name">CareRelay</span>
+                  <h1>La cura, <em>coordinata.</em></h1>
+                </div>
+              </div>
+              <p className="hero-product-line">
+                <span>App di coordinamento familiare</span>
+                <b aria-hidden="true">+</b>
+                <span>Assistente AI su WhatsApp</span>
+              </p>
               <p className="hero-lead">
-                <strong>Più autonomia per chi riceve assistenza. Più tranquillità per tutta la famiglia.</strong>{" "}
-                CareRelay riunisce attività, appuntamenti, promemoria, note e responsabilità.
-                Puoi usare l’app oppure parlare con l’assistente su WhatsApp, senza cambiare abitudini.
+                <strong>CareRelay è l’app in abbonamento per coordinare l’assistenza di una persona cara.</strong>{" "}
+                Riunisce attività, appuntamenti, promemoria, note e responsabilità, aiutando familiari,
+                caregiver e professionisti a collaborare. Puoi usare l’app oppure parlare con
+                l’assistente su WhatsApp, senza cambiare abitudini.
               </p>
 
               <div className="hero-actions">
@@ -365,11 +376,11 @@ export default function Home() {
             </div>
             <div className="circle-copy">
               <p className="eyebrow">Il cerchio di cura</p>
-              <h2>Anna al centro. Tutti gli altri, coordinati.</h2>
+              <h2>La persona che ami al centro. Tutti gli altri, coordinati.</h2>
               <p>
-                Familiari, caregiver e professionisti collaborano nello stesso spazio.
-                Ognuno vede ciò che gli serve, sa cosa deve fare e può aggiornare gli altri
-                dall’app o tramite l’assistente su WhatsApp.
+                Nell’esempio, Anna è al centro del suo cerchio. Familiari, caregiver e professionisti
+                collaborano nello stesso spazio: ognuno vede ciò che gli serve, sa cosa deve fare
+                e può aggiornare gli altri dall’app o tramite l’assistente su WhatsApp.
               </p>
               <div className="permission-list">
                 <div><span>◎</span><p><strong>Un ruolo per ogni persona</strong><small>Accessi diversi per familiari, caregiver e professionisti.</small></p></div>
