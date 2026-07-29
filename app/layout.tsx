@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const title = "CareRelay — La cura, coordinata";
+const title = "CareGive X — Prendersi cura, insieme";
 const description =
-  "CareRelay coordina attività, appuntamenti, promemoria e responsabilità familiari, anche tramite un assistente AI su WhatsApp.";
+  "CareGive X coordina l’assistenza di una persona cara attraverso un’app e un assistente AI su WhatsApp.";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   "https://carerelay-concept.giuseppe9696.chatgpt.site/";
@@ -12,21 +12,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`),
   title,
   description,
-  icons: {
-    icon: "favicon.svg",
-  },
   openGraph: {
     title,
     description,
     type: "website",
     locale: "it_IT",
-    images: [{ url: "og-coordination.png", width: 1732, height: 909, alt: title }],
+    images: [{ url: "og-caregive-x.png", width: 1662, height: 946, alt: title }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["og-coordination.png"],
+    images: ["og-caregive-x.png"],
   },
 };
 

@@ -1,11 +1,11 @@
-# CareRelay
+# CareGive X
 
-CareRelay è un concept SaaS mobile-first per coordinare attività, appuntamenti,
+CareGive X è un concept SaaS mobile-first per coordinare attività, appuntamenti,
 promemoria e responsabilità familiari. Può essere usato dall’app oppure
 parlando con un assistente AI su WhatsApp, senza cambiare le abitudini della
 famiglia.
 
-Come integrazione opzionale, CareRelay può raccogliere da dispositivi
+Come integrazione opzionale, CareGive X può raccogliere da dispositivi
 compatibili battito, ossigenazione, cadute rilevate e altri parametri
 disponibili, inviando alert ai contatti autorizzati quando viene superata una
 soglia configurata.
@@ -35,7 +35,7 @@ versione statica su GitHub Pages dopo ogni aggiornamento del branch `main`.
 
 ## Nota
 
-CareRelay è un software in validazione. Non formula diagnosi e non sostituisce
+CareGive X è un software in validazione. Non formula diagnosi e non sostituisce
 un medico, un dispositivo medico prescritto o un servizio di emergenza. La
 disponibilità e la precisione dei parametri dipendono dal dispositivo collegato.
 L’assistente usa solo le informazioni autorizzate e richiede conferma prima
