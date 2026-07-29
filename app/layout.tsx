@@ -4,7 +4,7 @@ import "./globals.css";
 
 const title = "CareRelay — La cura, coordinata";
 const description =
-  "CareRelay unisce bracciale, app familiare e comandi via WhatsApp per rendere più chiara e condivisa la cura quotidiana.";
+  "CareRelay collega smartwatch e fitness tracker compatibili e trasforma i dati disponibili in report chiari per la famiglia, con un unico piano da 9,99 € al mese.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();

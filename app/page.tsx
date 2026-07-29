@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useState } from "react";
 
 type Audience = "family" | "partner";
 type DemoStep = 0 | 1 | 2;
@@ -8,73 +8,67 @@ type DemoStep = 0 | 1 | 2;
 const audienceCopy = {
   family: {
     label: "Per la mia famiglia",
-    title: "Meno messaggi da rincorrere. Più serenità condivisa.",
-    body: "Riunisci attività, conferme e avvisi in una vista semplice, lasciando al centro l’autonomia della persona assistita.",
-    cta: "Partecipa come famiglia",
+    title: "Il tuo smartwatch diventa più utile a tutta la famiglia.",
+    body: "Collega un dispositivo compatibile, riunisci i dati disponibili e condividi solo ciò che serve in un riepilogo semplice.",
+    cta: "Richiedi accesso alla beta",
   },
   partner: {
     label: "Per la mia organizzazione",
-    title: "Un pilot misurabile, con confini e responsabilità chiari.",
-    body: "Valuta integrazioni, procedure operative e sostenibilità insieme a un progetto che separa sempre coordinamento e funzioni cliniche.",
-    cta: "Valuta una partnership",
+    title: "Una base software chiara per servizi di assistenza connessa.",
+    body: "Valuta connettori, permessi, report e flussi familiari senza dipendere dalla vendita di un dispositivo proprietario.",
+    cta: "Valuta un’integrazione",
   },
 };
 
-const plans = [
+const wearableProfiles = [
   {
-    name: "Sicurezza",
-    setup: "99 €",
-    monthly: 14.9,
-    note: "Per autonomia e contatto rapido",
-    features: ["Bracciale 4G e SIM", "SOS verso 3 contatti", "Cadute e GPS", "1 accesso familiare"],
+    level: "01 · Dati essenziali",
+    name: "Fitness tracker e orologi base",
+    data: ["Passi e distanza", "Minuti attivi", "Calorie stimate", "Durata del sonno"],
+    report: "Routine quotidiana, movimento e regolarità del riposo.",
   },
   {
-    name: "Care Plus",
-    setup: "149 €",
-    monthly: 19.99,
-    note: "Per coordinamento familiare evoluto",
-    features: ["Tutto di Sicurezza", "3 accessi familiari", "Geofence e avvisi", "Promemoria condivisi"],
-    featured: true,
+    level: "02 · Trend di benessere",
+    name: "Smartwatch con monitoraggio continuo",
+    data: ["Frequenza cardiaca", "Frequenza a riposo", "Fasi del sonno", "HRV e respirazione*"],
+    report: "Andamento del riposo, recupero e variazioni rispetto alla propria routine.",
   },
   {
-    name: "Care H24",
-    setup: "199 €",
-    monthly: 34.9,
-    note: "Solo con partner operativo qualificato",
-    features: ["Tutto di Care Plus", "Centrale partner 24/7", "Verifica degli allarmi", "Protocollo personalizzato"],
+    level: "03 · Sensori avanzati",
+    name: "Dispositivi con sensori aggiuntivi",
+    data: ["Ossigenazione stimata*", "Temperatura cutanea*", "ECG o eventi di ritmo*", "Cadute e posizione*"],
+    report: "Segnali ed eventi disponibili, organizzati per essere condivisi con chi è autorizzato.",
   },
 ];
 
 const faqs = [
   {
-    q: "CareRelay è già un servizio medico attivo?",
-    a: "No. È un concept in validazione. Il primo pilot riguarda il coordinamento non medico; emergenze e funzioni cliniche richiedono partner, moduli e procedure qualificati.",
+    q: "CareRelay fa diagnosi o sostituisce il medico?",
+    a: "No. CareRelay organizza dati e trend di benessere condivisi dal dispositivo. Non formula diagnosi, non prescrive e non sostituisce professionisti o servizi di emergenza.",
   },
   {
-    q: "Serve imparare una nuova app?",
-    a: "L’app raccoglie la vista completa, ma le azioni rapide possono partire anche da WhatsApp. CareRelay propone una scheda chiara e chiede sempre conferma.",
+    q: "Funziona con qualunque smartwatch?",
+    a: "CareRelay è pensato per i dispositivi che condividono dati attraverso servizi salute e connettori supportati. La compatibilità effettiva dipende da modello, telefono, permessi, Paese e dati esposti dal produttore.",
   },
   {
-    q: "Chi vede le informazioni?",
-    a: "Solo le persone invitate, secondo il ruolo assegnato. Accessi, modifiche e revoche devono essere leggibili e tracciabili.",
+    q: "Perché i report cambiano da un dispositivo all’altro?",
+    a: "Ogni modello ha sensori e autorizzazioni differenti. CareRelay mostra solo i dati realmente disponibili e indica sempre la loro origine, senza riempire i vuoti con stime proprie.",
   },
   {
-    q: "I prezzi sono definitivi?",
-    a: "No. Sono ipotesi commerciali da verificare durante il pilot insieme a famiglie, partner e fornitori.",
+    q: "Cosa comprende il piano da 9,99 €?",
+    a: "Un solo spazio famiglia, profili invitati, riepiloghi, attività condivise e collegamento ai dispositivi compatibili. Lo smartwatch o fitness tracker non è incluso.",
   },
 ];
 
 export default function Home() {
   const [audience, setAudience] = useState<Audience>("family");
   const [demoStep, setDemoStep] = useState<DemoStep>(0);
-  const [annual, setAnnual] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [brief, setBrief] = useState("");
   const [copied, setCopied] = useState(false);
 
   const selectedAudience = audienceCopy[audience];
-  const priceLabel = useMemo(() => (annual ? "equivalente mensile, -10%" : "al mese"), [annual]);
 
   function scrollToPilot(nextAudience?: Audience) {
     if (nextAudience) setAudience(nextAudience);
@@ -91,13 +85,13 @@ export default function Home() {
     const message = String(form.get("message") || "").trim();
     setBrief(
       [
-        "Manifestazione d’interesse — CareRelay",
+        "Richiesta accesso beta — CareRelay",
         `Nome: ${name}`,
         `Email: ${email}`,
         `Profilo: ${role}`,
         `Organizzazione: ${organization || "Non indicata"}`,
         "",
-        message || "Vorrei ricevere aggiornamenti sul pilot CareRelay.",
+        message || "Vorrei verificare la compatibilità del mio dispositivo e ricevere accesso alla beta CareRelay.",
       ].join("\n"),
     );
     setCopied(false);
@@ -137,9 +131,10 @@ export default function Home() {
           <div className={`nav-links ${menuOpen ? "is-open" : ""}`} id="nav-links">
             <a href="#come-funziona" onClick={() => setMenuOpen(false)}>Come funziona</a>
             <a href="#sicurezza" onClick={() => setMenuOpen(false)}>Sicurezza</a>
-            <a href="#piani" onClick={() => setMenuOpen(false)}>Piani</a>
+            <a href="#compatibilita" onClick={() => setMenuOpen(false)}>Compatibilità</a>
+            <a href="#abbonamento" onClick={() => setMenuOpen(false)}>9,99 €/mese</a>
             <button className="button button-dark button-small" onClick={() => scrollToPilot()}>
-              Partecipa al pilot
+              Richiedi accesso
             </button>
           </div>
         </nav>
@@ -151,12 +146,16 @@ export default function Home() {
           <div className="hero-orb hero-orb-two" aria-hidden="true" />
           <div className="shell hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow"><span>●</span> Bracciale, app e WhatsApp in un unico flusso</p>
-              <h1>Un unico filo per la cura di <em>ogni giorno.</em></h1>
+              <p className="eyebrow"><span>●</span> Il software per il wearable che hai già</p>
+              <h1>Il tuo orologio raccoglie dati. <em>CareRelay li rende chiari.</em></h1>
               <p className="hero-lead">
-                CareRelay aiuta famiglie e assistenti a trasformare messaggi, promemoria e avvisi
-                in attività chiare, confermate e condivise.
+                Collega uno smartwatch o fitness tracker compatibile, riunisci attività,
+                benessere e coordinamento familiare in un’unica app semplice.
               </p>
+              <div className="hero-offer" aria-label="Piano unico CareRelay">
+                <strong>9,99 €</strong>
+                <span>al mese<br /><small>Un solo piano · nessun hardware da comprare</small></span>
+              </div>
 
               <div className="audience-switch" aria-label="Scegli il tuo percorso">
                 <button
@@ -218,15 +217,15 @@ export default function Home() {
               </div>
               <div className="floating-alert">
                 <span>CR</span>
-                <p><strong>Bracciale connesso</strong><small>Batteria 82% · ultimo contatto ora</small></p>
+                <p><strong>Wearable sincronizzato</strong><small>4 categorie di dati disponibili · ora</small></p>
               </div>
             </div>
           </div>
 
           <div className="shell trust-row" aria-label="Principi del progetto">
-            <div><span>01</span><strong>Conferma prima di agire</strong><small>Nessuna supposizione nascosta</small></div>
-            <div><span>02</span><strong>Responsabilità leggibili</strong><small>Si vede chi fa cosa</small></div>
-            <div><span>03</span><strong>Confini clinici espliciti</strong><small>Coordinare non è prescrivere</small></div>
+            <div><span>01</span><strong>Usa il dispositivo che hai</strong><small>Se compatibile, non devi comprarne uno nuovo</small></div>
+            <div><span>02</span><strong>Report proporzionati ai sensori</strong><small>Più dati disponibili, più ricco il riepilogo</small></div>
+            <div><span>03</span><strong>Nessuna diagnosi automatica</strong><small>Dati organizzati, limiti sempre visibili</small></div>
           </div>
         </section>
 
@@ -265,9 +264,9 @@ export default function Home() {
             <p>Il sistema propone. Una persona controlla. Solo dopo la conferma l’attività entra nel riepilogo condiviso.</p>
           </div>
           <div className="shell steps">
-            <article><span>01</span><div className="step-symbol">“ ”</div><h3>Parla come fai già</h3><p>Invia testo o nota vocale da WhatsApp oppure dall’app CareRelay.</p></article>
-            <article className="step-featured"><span>02</span><div className="step-symbol">◎</div><h3>Controlla la proposta</h3><p>Data, ora e responsabile sono sempre modificabili prima della conferma.</p></article>
-            <article><span>03</span><div className="step-symbol">✓</div><h3>Allinea il cerchio</h3><p>La nuova attività appare solo alle persone autorizzate, con una traccia chiara.</p></article>
+            <article><span>01</span><div className="step-symbol">⌚</div><h3>Collega il tuo wearable</h3><p>CareRelay importa solo le categorie di dati autorizzate e supportate dal dispositivo.</p></article>
+            <article className="step-featured"><span>02</span><div className="step-symbol">◎</div><h3>Ricevi un quadro semplice</h3><p>Attività, sonno e trend disponibili vengono ordinati in un riepilogo leggibile.</p></article>
+            <article><span>03</span><div className="step-symbol">✓</div><h3>Condividi con il tuo cerchio</h3><p>Decidi chi può vedere i report e coordina le attività anche da WhatsApp.</p></article>
           </div>
 
           <div className="shell demo">
@@ -318,39 +317,44 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="ecosystem section">
+        <section className="compatibility section" id="compatibilita">
           <div className="shell section-head">
-            <div><p className="eyebrow">Un ecosistema, non tre strumenti</p><h2>Ogni canale fa la cosa giusta.</h2></div>
-            <p>Il bracciale protegge la continuità, l’app rende tutto leggibile e WhatsApp riduce l’attrito nelle azioni quotidiane.</p>
+            <div><p className="eyebrow">Compatibilità leggibile</p><h2>Più sensori disponibili, più ricco è il report.</h2></div>
+            <p>Non tutti i dispositivi raccolgono gli stessi dati. CareRelay riconosce ciò che il wearable può condividere e adatta il riepilogo senza inventare informazioni mancanti.</p>
           </div>
-          <div className="shell ecosystem-grid">
-            <article className="device-card bracelet-card">
-              <div className="bracelet" aria-hidden="true"><span>SOS</span></div>
-              <div><span className="card-kicker">Bracciale 4G</span><h3>Sempre vicino alla persona</h3><p>SOS, rilevamento cadute, localizzazione e stato del dispositivo.</p></div>
-            </article>
-            <article className="device-card app-card">
-              <div className="mini-app" aria-hidden="true"><span>Oggi</span><b>3 / 3</b><i /><i /><i /></div>
-              <div><span className="card-kicker">App CareRelay</span><h3>Il quadro completo, senza rumore</h3><p>Attività, avvisi, ruoli e storico in una vista pensata per essere capita al volo.</p></div>
-            </article>
-            <article className="device-card wa-card">
-              <div className="wa-bubbles" aria-hidden="true"><span>“Passo io alle 17”</span><b>Attività pronta ✓</b></div>
-              <div><span className="card-kicker">WhatsApp</span><h3>Azioni rapide, abitudini intatte</h3><p>Testo e voce diventano proposte strutturate, sempre da confermare.</p></div>
-            </article>
+          <div className="shell connect-strip">
+            <div className="wearable-stack" aria-hidden="true"><span>⌚</span><span>◉</span><span>▣</span></div>
+            <div><small>1 · COLLEGA</small><strong>Smartwatch o fitness tracker compatibile</strong></div>
+            <i>→</i>
+            <div><small>2 · AUTORIZZA</small><strong>Scegli quali dati condividere</strong></div>
+            <i>→</i>
+            <div><small>3 · LEGGI</small><strong>Un report adatto al tuo dispositivo</strong></div>
           </div>
+          <div className="shell report-grid">
+            {wearableProfiles.map((profile) => (
+              <article className="report-card" key={profile.level}>
+                <span>{profile.level}</span>
+                <h3>{profile.name}</h3>
+                <div className="data-tags">{profile.data.map((item) => <small key={item}>{item}</small>)}</div>
+                <div className="report-output"><b>Report CareRelay</b><p>{profile.report}</p></div>
+              </article>
+            ))}
+          </div>
+          <p className="shell compatibility-note">* Disponibilità variabile in base a modello, sistema operativo, Paese, permessi e dati resi accessibili dal produttore. CareRelay non trasforma questi valori in diagnosi.</p>
         </section>
 
         <section className="safety section" id="sicurezza">
           <div className="shell safety-grid">
             <div className="safety-copy">
               <p className="eyebrow eyebrow-light">Confini chiari</p>
-              <h2>Utile, senza fingere di essere un medico.</h2>
-              <p>CareRelay cresce per livelli. Ogni funzione entra solo quando tecnologia, responsabilità e supervisione sono adeguate al rischio.</p>
-              <div className="safety-note"><span>!</span><p><strong>In caso di emergenza</strong>Il concept non sostituisce il 112/118 e oggi non gestisce allarmi reali.</p></div>
+              <h2>Dati utili, senza conclusioni affrettate.</h2>
+              <p>CareRelay rende più leggibili dati e trend già prodotti dal dispositivo. Mostra la fonte, segnala i limiti e lascia le decisioni sanitarie alle persone qualificate.</p>
+              <div className="safety-note"><span>!</span><p><strong>In caso di emergenza</strong>CareRelay non è un servizio di monitoraggio e non sostituisce il 112/118.</p></div>
             </div>
             <div className="scope-list">
-              <article><span className="scope-now">Nel pilot</span><h3>Coordinamento quotidiano</h3><p>Attività, promemoria inseriti dalla famiglia, conferme e riepiloghi.</p><small>Disponibile solo nel perimetro non medico del pilot</small></article>
-              <article><span className="scope-gated">Con prerequisiti</span><h3>Sintomi e farmaci</h3><p>Raccolta guidata e passaggio di mano, senza prescrizioni o interpretazioni cliniche.</p><small>Richiede moduli conformi e supervisione qualificata</small></article>
-              <article><span className="scope-future">Futuro partner</span><h3>Emergenze 24/7</h3><p>Instradamento degli allarmi a una centrale con operatori, procedure e ridondanza.</p><small>Richiede SLA e partner operativo qualificato</small></article>
+              <article><span className="scope-now">CareRelay Core</span><h3>Riepiloghi e coordinamento</h3><p>Trend disponibili, attività, note, conferme e condivisione per ruolo.</p><small>Il cuore del servizio SaaS da 9,99 € al mese</small></article>
+              <article><span className="scope-gated">Dal dispositivo</span><h3>Segnali ed eventi supportati</h3><p>CareRelay può mostrare solo ciò che il wearable e il relativo servizio rendono accessibile.</p><small>Nessuna stima aggiunta quando il dato non esiste</small></article>
+              <article><span className="scope-future">Fuori perimetro</span><h3>Diagnosi ed emergenze</h3><p>Nessuna diagnosi, modifica terapeutica o promessa di intervento automatico.</p><small>Per la salute servono professionisti e servizi qualificati</small></article>
             </div>
           </div>
           <div className="shell security-principles">
@@ -361,44 +365,39 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="pricing section" id="piani">
-          <div className="shell section-head pricing-head">
-            <div><p className="eyebrow">Ipotesi di piani</p><h2>Un punto di partenza da validare insieme.</h2></div>
-            <div className="billing-toggle" aria-label="Visualizza prezzo mensile o annuale">
-              <button className={!annual ? "active" : ""} onClick={() => setAnnual(false)}>Mensile</button>
-              <button className={annual ? "active" : ""} onClick={() => setAnnual(true)}>Annuale <span>-10%</span></button>
+        <section className="pricing section" id="abbonamento">
+          <div className="shell single-plan-layout">
+            <div className="single-plan-copy">
+              <p className="eyebrow">Un solo abbonamento</p>
+              <h2>Semplice da capire. Facile da iniziare.</h2>
+              <p>Nessun dispositivo proprietario, nessun costo di attivazione e nessun livello premium che nasconde le funzioni utili.</p>
+              <div className="not-included"><span>⌚</span><p><strong>Usa il tuo wearable compatibile</strong><small>Smartwatch e fitness tracker non sono venduti né inclusi da CareRelay.</small></p></div>
             </div>
+            <article className="single-plan">
+              <span className="plan-label">Piano unico</span>
+              <div className="single-price"><strong>9,99 €</strong><span>al mese<small>per spazio famiglia</small></span></div>
+              <ul>
+                <li><span>✓</span>Collegamento ai dispositivi compatibili</li>
+                <li><span>✓</span>Report adattati ai dati disponibili</li>
+                <li><span>✓</span>Attività e promemoria condivisi</li>
+                <li><span>✓</span>Profili familiari con permessi distinti</li>
+                <li><span>✓</span>Riepiloghi semplici anche da smartphone</li>
+                <li><span>✓</span>Nessuna pubblicità e nessuna vendita hardware</li>
+              </ul>
+              <button className="button button-primary button-full" onClick={() => scrollToPilot("family")}>Richiedi accesso alla beta →</button>
+              <small className="plan-fineprint">Disponibilità in fase di validazione. Prima dell’attivazione verrà verificata la compatibilità del dispositivo.</small>
+            </article>
           </div>
-          <div className="shell plan-grid">
-            {plans.map((plan) => {
-              const monthly = annual ? plan.monthly * 0.9 : plan.monthly;
-              return (
-                <article key={plan.name} className={plan.featured ? "plan featured-plan" : "plan"}>
-                  {plan.featured && <span className="plan-label">Più completo per le famiglie</span>}
-                  <div className="plan-top"><span>{plan.name}</span><small>{plan.note}</small></div>
-                  <div className="plan-price"><strong>{monthly.toFixed(2).replace(".", ",")} €</strong><small>{priceLabel}</small></div>
-                  <p><b>{plan.setup}</b> di attivazione ipotizzata</p>
-                  <ul>{plan.features.map((feature) => <li key={feature}><span>✓</span>{feature}</li>)}</ul>
-                  <button className="button button-outline" onClick={() => scrollToPilot(plan.name === "Care H24" ? "partner" : "family")}>
-                    Valuta questo piano
-                  </button>
-                </article>
-              );
-            })}
-          </div>
-          <p className="shell pricing-disclaimer">
-            <strong>Non sono offerte commerciali.</strong> Prezzi, IVA, dispositivo, coperture e condizioni sono ipotesi da verificare. Care H24 dipende da un partner operativo qualificato.
-          </p>
         </section>
 
         <section className="roadmap section">
           <div className="shell roadmap-grid">
-            <div className="roadmap-copy"><p className="eyebrow">Roadmap responsabile</p><h2>Prima la prova. Poi la promessa.</h2><p>Ogni fase ha un cancello: si prosegue solo quando uso, sicurezza e sostenibilità sono dimostrati.</p></div>
+            <div className="roadmap-copy"><p className="eyebrow">Roadmap SaaS</p><h2>Prima l’esperienza. Poi più integrazioni.</h2><p>CareRelay cresce aggiungendo connettori e qualità del dato, senza obbligare le famiglie a cambiare dispositivo.</p></div>
             <ol className="roadmap-list">
-              <li className="current"><span>1</span><div><small>Ora</small><h3>Pilot non medico</h3><p>10–30 famiglie, coordinamento e supporto umano.</p></div></li>
-              <li><span>2</span><div><small>Da progettare</small><h3>Partner e infrastruttura</h3><p>DPIA, sicurezza, contratti e procedure.</p></div></li>
-              <li><span>3</span><div><small>Solo con evidenze</small><h3>Moduli qualificati</h3><p>Validazione, supervisione e conformità.</p></div></li>
-              <li><span>4</span><div><small>Obiettivo futuro</small><h3>Servizio 24/7</h3><p>Centrale partner, SLA e ridondanza.</p></div></li>
+              <li className="current"><span>1</span><div><small>Ora</small><h3>Beta mobile-first</h3><p>Collegamento, report essenziali e coordinamento familiare.</p></div></li>
+              <li><span>2</span><div><small>Prossimo</small><h3>Più connettori</h3><p>Copertura progressiva dei principali servizi salute.</p></div></li>
+              <li><span>3</span><div><small>Con consenso</small><h3>Report condivisibili</h3><p>Esportazione chiara per caregiver e professionisti scelti.</p></div></li>
+              <li><span>4</span><div><small>Solo se qualificato</small><h3>Moduli specialistici</h3><p>Funzioni separate, validate e con responsabilità esplicite.</p></div></li>
             </ol>
           </div>
         </section>
@@ -423,16 +422,16 @@ export default function Home() {
           <div className="pilot-glow" aria-hidden="true" />
           <div className="shell pilot-grid">
             <div className="pilot-copy">
-              <p className="eyebrow eyebrow-light">Partecipa alla validazione</p>
-              <h2>Aiutaci a capire se CareRelay può fare davvero la differenza.</h2>
-              <p>Cerchiamo famiglie, partner tecnici e operativi, finanziatori e acceleratori per verificare bisogno, fattibilità e sostenibilità.</p>
-              <div className="pilot-points"><span>Famiglie e futuri utenti</span><span>Partner tecnici e operativi</span><span>Finanziatori e acceleratori</span></div>
+              <p className="eyebrow eyebrow-light">Accesso anticipato</p>
+              <h2>Prova il piano unico con il wearable che usi già.</h2>
+              <p>Stiamo selezionando le prime famiglie e i primi partner per verificare compatibilità, chiarezza dei report ed esperienza quotidiana.</p>
+              <div className="pilot-points"><span>9,99 € al mese al lancio</span><span>Nessun hardware da acquistare</span><span>Compatibilità verificata prima dell’accesso</span></div>
               <div className="no-send-note"><strong>Trasparenza sul contatto</strong><p>Il canale di invio non è ancora configurato. Il modulo prepara un riepilogo da copiare: nessun dato viene inviato o salvato.</p></div>
             </div>
 
             {!brief ? (
               <form className="interest-form" onSubmit={submitInterest}>
-                <div className="form-head"><span>Manifestazione d’interesse</span><small>Passaggio 1 di 1</small></div>
+                <div className="form-head"><span>Richiedi accesso alla beta</span><small>Richiede meno di 1 minuto</small></div>
                 <div className="form-row">
                   <label>Nome<input name="name" autoComplete="name" required minLength={2} placeholder="Come ti chiami?" /></label>
                   <label>Email<input name="email" type="email" autoComplete="email" required placeholder="nome@esempio.it" /></label>
@@ -441,13 +440,11 @@ export default function Home() {
                   <select name="role" value={audience === "family" ? "Famiglia / futuro utente" : "Partner tecnico o operativo"} onChange={(e) => setAudience(e.target.value.startsWith("Famiglia") ? "family" : "partner")}>
                     <option>Famiglia / futuro utente</option>
                     <option>Partner tecnico o operativo</option>
-                    <option>Finanziatore / acceleratore</option>
                   </select>
                 </label>
-                <label>Organizzazione <span>facoltativa</span><input name="organization" autoComplete="organization" /></label>
-                <label>Come vorresti contribuire? <span>facoltativo</span><textarea name="message" rows={4} maxLength={900} /></label>
+                {audience === "partner" && <label>Organizzazione <span>facoltativa</span><input name="organization" autoComplete="organization" /></label>}
                 <label className="consent"><input type="checkbox" required /><span>Ho compreso che CareRelay è un concept e non inserirò dati sanitari nel modulo.</span></label>
-                <button className="button button-primary button-full" type="submit">Prepara il riepilogo →</button>
+                <button className="button button-primary button-full" type="submit">Prepara la richiesta →</button>
               </form>
             ) : (
               <div className="brief-card" aria-live="polite">
@@ -464,10 +461,15 @@ export default function Home() {
         </section>
       </div>
 
+      <div className="mobile-cta" aria-label="Piano CareRelay">
+        <div><strong>9,99 €</strong><small>al mese</small></div>
+        <button onClick={() => scrollToPilot("family")}>Richiedi accesso</button>
+      </div>
+
       <footer>
         <div className="shell footer-grid">
           <div><a className="brand footer-brand" href="#inizio"><span className="brand-mark">C</span><span>CareRelay</span></a><p>La cura, coordinata.</p></div>
-          <div className="footer-note"><strong>Concept dimostrativo — non è un servizio medico attivo.</strong><p>Non usare questa pagina per richieste di salute o emergenze.</p></div>
+          <div className="footer-note"><strong>Software in fase di validazione — non è un dispositivo medico.</strong><p>Non usare CareRelay per diagnosi, decisioni terapeutiche o richieste di emergenza.</p></div>
           <div className="footer-links"><a href="#come-funziona">Come funziona</a><a href="#sicurezza">Sicurezza</a><a href="#pilot">Pilot</a></div>
         </div>
         <div className="shell footer-bottom"><span>© 2026 CareRelay concept</span><span>Progettato per una validazione responsabile</span></div>
