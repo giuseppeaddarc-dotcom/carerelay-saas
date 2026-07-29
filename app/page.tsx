@@ -171,7 +171,7 @@ export default function Home() {
               <p className="hero-price-note"><strong>5,99 €</strong> al mese · un solo piano · nessun hardware obbligatorio</p>
             </div>
 
-            <div className="x-hero-card" aria-label="Il logo CareGive X rappresenta Anna al centro e le persone che partecipano alla sua assistenza alle estremità">
+            <div className="x-hero-card" aria-label="Il logo CareGive X rappresenta la persona assistita al centro e chi partecipa alla sua assistenza alle estremità">
               <div className="x-card-top">
                 <div className="x-card-brand">
                   <BrandMark className="x-mark-medium" />
@@ -179,14 +179,14 @@ export default function Home() {
                 </div>
                 <span className="live-pill"><i /> Cerchio attivo</span>
               </div>
-              <div className="x-network" role="img" aria-label="Anna al centro della X; Giulia, Marco, Alina e la dottoressa Riva alle estremità">
+              <div className="x-network" role="img" aria-label="La persona assistita al centro della X; familiari, caregiver e specialista alle estremità">
                 <i className="network-arm network-arm-a" aria-hidden="true" />
                 <i className="network-arm network-arm-b" aria-hidden="true" />
-                <div className="network-node node-one"><b>Giulia</b><small>Figlia</small></div>
-                <div className="network-node node-two"><b>Marco</b><small>Familiare</small></div>
-                <div className="network-node node-three"><b>Alina</b><small>Caregiver · badante</small></div>
-                <div className="network-node node-four"><b>Dott.ssa Riva</b><small>Specialista</small></div>
-                <div className="network-center"><span>♥</span><b>Anna</b><small>Persona assistita</small></div>
+                <div className="network-node node-one"><b>I suoi cari</b><small>Famiglia</small></div>
+                <div className="network-node node-two"><b>Rete di fiducia</b><small>Altri familiari</small></div>
+                <div className="network-node node-three"><b>Caregiver</b><small>Badante · assistente</small></div>
+                <div className="network-node node-four"><b>Professionisti</b><small>Psicologi · specialisti</small></div>
+                <div className="network-center"><span>♥</span><b>Persona</b><small>assistita</small></div>
               </div>
               <div className="x-card-status">
                 <span aria-hidden="true">✓</span>
@@ -247,7 +247,7 @@ export default function Home() {
               {demoStep === 0 && (
                 <div className="message-thread">
                   <p className="message-user">Cosa c’è da fare oggi per mamma?</p>
-                  <div className="message-ai"><small>Riepilogo di oggi</small><strong>Ci sono 3 attività</strong><span>10:00 · Parrucchiere — Giulia</span><span>16:30 · Spesa — Marco</span><span>20:00 · Promemoria — da confermare</span></div>
+                  <div className="message-ai"><small>Riepilogo di oggi</small><strong>Ci sono 3 attività</strong><span>10:00 · Parrucchiere — figlia</span><span>16:30 · Spesa — familiare</span><span>20:00 · Promemoria — da confermare</span></div>
                 </div>
               )}
               {demoStep === 1 && (
@@ -258,8 +258,8 @@ export default function Home() {
               )}
               {demoStep === 2 && (
                 <div className="message-thread">
-                  <p className="message-user">Dì a tutti che Anna ha già cenato.</p>
-                  <div className="message-ai message-confirmed"><i>✓</i><small>Aggiornamento condiviso</small><strong>“Anna ha già cenato.”</strong><span>Visibile al cerchio autorizzato</span></div>
+                  <p className="message-user">Dì a tutti che mamma ha già cenato.</p>
+                  <div className="message-ai message-confirmed"><i>✓</i><small>Aggiornamento condiviso</small><strong>“Ha già cenato.”</strong><span>Visibile al cerchio autorizzato</span></div>
                 </div>
               )}
               <div className="message-input"><span>Scrivi o invia una nota vocale</span><b>●</b></div>
@@ -278,7 +278,7 @@ export default function Home() {
 
         <section className="circle-section section" id="cerchio">
           <div className="shell circle-layout">
-            <div className="family-orbit" role="img" aria-label="Anna, persona assistita, al centro del cerchio formato da Giulia, Marco, Alina e la dottoressa Riva">
+            <div className="family-orbit" role="img" aria-label="Una persona assistita di esempio al centro del cerchio formato da familiari, caregiver e una specialista">
               <span className="family-line line-one" aria-hidden="true" />
               <span className="family-line line-two" aria-hidden="true" />
               <span className="family-line line-three" aria-hidden="true" />
@@ -287,12 +287,12 @@ export default function Home() {
               <div className="orbit-label label-two"><b>Marco</b><small>Familiare</small></div>
               <div className="orbit-label label-three"><b>Alina</b><small>Caregiver · badante</small></div>
               <div className="orbit-label label-four"><b>Dott.ssa Riva</b><small>Specialista · accesso mirato</small></div>
-              <div className="family-center"><span aria-hidden="true">♥</span><b>Anna</b><small>Persona assistita</small></div>
+              <div className="family-center"><span aria-hidden="true">♥</span><b>Anna</b><small>Nome di esempio</small></div>
             </div>
             <div className="circle-copy">
               <p className="eyebrow">La persona che ami al centro</p>
               <h2>Un cerchio di cura.<br />Non una catena di messaggi.</h2>
-              <p>Familiari, caregiver, badanti, psicologi e specialisti collaborano nello stesso spazio. Ognuno ha un ruolo chiaro e vede solo ciò che gli serve.</p>
+              <p>Nel grafico usiamo un nome di esempio. Nel tuo spazio, al centro ci sarà la persona di cui vi prendete cura; familiari, caregiver, badanti, psicologi e specialisti collaboreranno intorno a lei.</p>
               <div className="permission-list">
                 <div><span>◎</span><p><strong>Un ruolo per ogni persona</strong><small>Accessi diversi, responsabilità leggibili.</small></p></div>
                 <div><span>✓</span><p><strong>Conferme visibili</strong><small>È chiaro chi ha fatto o preso in carico un’attività.</small></p></div>
@@ -330,10 +330,10 @@ export default function Home() {
               <div className="medication-time"><span>Oggi</span><strong>20:00</strong><small>Promemoria confermato dalla famiglia</small></div>
               <div className="medication-card">
                 <span className="medication-icon" aria-hidden="true">●</span>
-                <p><small>È il momento del promemoria</small><strong>Farmaco della sera</strong><span>Voce inserita da Giulia</span></p>
+                <p><small>È il momento del promemoria</small><strong>Farmaco della sera</strong><span>Voce inserita dalla famiglia</span></p>
               </div>
               <div className="medication-actions" aria-hidden="true"><span>Fatto</span><span>Ricordamelo dopo</span></div>
-              <div className="medication-status"><span aria-hidden="true">✓</span><p><strong>Confermato da Anna</strong><small>Il cerchio familiare è aggiornato</small></p></div>
+              <div className="medication-status"><span aria-hidden="true">✓</span><p><strong>Confermato dalla persona assistita</strong><small>Il cerchio familiare è aggiornato</small></p></div>
             </div>
             <p className="medication-boundary">CareGive X ricorda ciò che è stato inserito e confermato. Non prescrive, non modifica dosi e non decide cosa fare in caso di mancata assunzione.</p>
           </div>
