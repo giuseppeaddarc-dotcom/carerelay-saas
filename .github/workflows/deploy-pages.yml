@@ -1,4 +1,4 @@
-name: Deploy CareRelay to GitHub Pages
+name: Deploy CareGive X to GitHub Pages
 
 on:
   push:
