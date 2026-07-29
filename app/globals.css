@@ -315,6 +315,23 @@ button { color: inherit; }
 .channel-primary > span { color: var(--aqua) !important; }
 .channel-primary p { color: #bdc8d0; }
 .channel-optional { border-style: dashed !important; background: transparent !important; }
+.vital-monitor { margin-top: 16px; padding: 34px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px 52px; align-items: center; border: 1px solid var(--line); border-radius: 25px; background: #e7f4ef; }
+.vital-copy h3 { margin: 8px 0 13px; font-size: clamp(31px, 3vw, 43px); line-height: 1; letter-spacing: -.045em; }
+.vital-copy > p:last-child { margin: 0; color: var(--muted); line-height: 1.6; }
+.vital-preview { padding: 22px; border: 1px solid rgba(11, 40, 63, .12); border-radius: 20px; background: rgba(255, 253, 250, .86); }
+.preview-label { display: block; margin-bottom: 14px; color: var(--muted); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.vital-readings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.vital-readings > div { min-width: 0; padding: 14px 12px; display: flex; gap: 10px; border: 1px solid var(--line); border-radius: 14px; background: white; }
+.vital-readings > div > span { width: 28px; height: 28px; flex: 0 0 28px; display: grid; place-items: center; border-radius: 9px; background: var(--navy); color: var(--aqua); font-size: 11px; font-weight: 900; }
+.vital-readings p { min-width: 0; margin: 0; display: grid; color: var(--muted); font-size: 10px; }
+.vital-readings strong { overflow-wrap: anywhere; color: var(--navy); font-size: 17px; letter-spacing: -.025em; }
+.vital-readings small { color: var(--muted); font-size: 9px; line-height: 1.25; }
+.vital-alert { margin-top: 9px; padding: 13px; display: flex; gap: 11px; align-items: center; border: 1px solid rgba(255, 118, 95, .28); border-radius: 14px; background: rgba(255, 118, 95, .1); }
+.vital-alert > span { width: 29px; height: 29px; flex: 0 0 29px; display: grid; place-items: center; border-radius: 50%; background: var(--coral); color: var(--navy); font-weight: 900; }
+.vital-alert p { margin: 0; display: grid; }
+.vital-alert strong { font-size: 12px; }
+.vital-alert small { color: var(--muted); font-size: 10px; line-height: 1.35; }
+.vital-disclaimer { grid-column: 1 / -1; margin: -8px 0 0; padding-top: 18px; border-top: 1px solid rgba(11, 40, 63, .1); color: var(--muted); font-size: 11px; line-height: 1.55; }
 
 .compatibility { background: var(--paper); }
 .connect-strip { margin-top: 58px; padding: 22px 26px; display: grid; grid-template-columns: auto 1fr auto 1fr auto 1fr; gap: 20px; align-items: center; border: 1px solid var(--line); border-radius: 22px; background: #ece8df; }
@@ -501,6 +518,7 @@ footer { padding: 55px 0 24px; background: #061423; color: white; }
   .hero-copy { max-width: 760px; }
   .care-console { width: min(600px, 90%); margin-inline: auto; }
   .channel-grid { grid-template-columns: 1fr; }
+  .vital-monitor { grid-template-columns: 1fr; }
   .management-grid { grid-template-columns: repeat(2, 1fr); }
   .noise-board { grid-template-columns: repeat(2, 1fr); }
   .ecosystem-grid, .plan-grid, .report-grid { grid-template-columns: 1fr; }
@@ -554,6 +572,10 @@ footer { padding: 55px 0 24px; background: #061423; color: white; }
   .assistant-boundary { grid-template-columns: 1fr; gap: 8px; }
   .management-grid article { min-height: 220px; }
   .channel-grid article { min-height: 260px; }
+  .vital-monitor { padding: 24px 18px; gap: 28px; }
+  .vital-readings { grid-template-columns: 1fr; }
+  .vital-readings > div { align-items: center; }
+  .vital-disclaimer { margin-top: -4px; }
   .connect-strip { padding: 20px; grid-template-columns: 1fr; gap: 12px; }
   .connect-strip > i { transform: rotate(90deg); justify-self: center; }
   .wearable-stack { margin: 0 auto 5px; justify-content: center; }

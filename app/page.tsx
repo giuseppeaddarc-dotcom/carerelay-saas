@@ -48,7 +48,11 @@ const faqs = [
   },
   {
     q: "Serve uno smartwatch?",
-    a: "No. CareRelay funziona come servizio di coordinamento anche senza wearable. Calendari, smartwatch e altri servizi sono integrazioni opzionali.",
+    a: "No. CareRelay funziona come servizio di coordinamento anche senza wearable. Se colleghi un dispositivo compatibile, può aggiungere al quadro familiare i parametri che quel modello rende disponibili.",
+  },
+  {
+    q: "Quali parametri può monitorare?",
+    a: "Dipende dal dispositivo collegato. CareRelay può raccogliere battito, ossigenazione, cadute rilevate e altri segnali disponibili, confrontarli con soglie configurate e inviare alert ai contatti autorizzati. Gli alert sono informativi: non sono diagnosi e non sostituiscono i servizi di emergenza.",
   },
   {
     q: "CareRelay dà consigli medici?",
@@ -356,9 +360,34 @@ export default function Home() {
               <p>Calendario, ruoli, storico, documenti e quadro generale della famiglia.</p>
             </article>
             <article className="channel-optional">
-              <span>Quando servono</span><h3>Integrazioni opzionali</h3>
-              <p>Calendari, servizi salute e wearable compatibili possono arricchire il quadro, ma non sono necessari.</p>
+              <span>Quando serve</span><h3>Monitoraggio opzionale</h3>
+              <p>Wearable e servizi salute compatibili possono aggiungere segnali utili al quadro familiare, senza essere necessari per usare CareRelay.</p>
             </article>
+          </div>
+          <div className="shell vital-monitor">
+            <div className="vital-copy">
+              <p className="eyebrow">Da dispositivi compatibili</p>
+              <h3>Un segnale in più, quando serve.</h3>
+              <p>
+                Se il dispositivo rende disponibili i dati, CareRelay può raccogliere battito,
+                ossigenazione, cadute rilevate e altri parametri. Quando un valore supera una
+                soglia configurata — o viene rilevata una caduta — invia un alert ai contatti autorizzati.
+              </p>
+            </div>
+            <div className="vital-preview" aria-label="Esempio illustrativo di monitoraggio">
+              <span className="preview-label">Esempio illustrativo</span>
+              <div className="vital-readings">
+                <div><span aria-hidden="true">♥</span><p>Battito<strong>72 bpm</strong><small>Entro la soglia</small></p></div>
+                <div><span aria-hidden="true">O₂</span><p>Ossigenazione<strong>96%</strong><small>Ultimo dato ricevuto</small></p></div>
+                <div><span aria-hidden="true">↘</span><p>Cadute<strong>Nessuna</strong><small>Nessun evento rilevato</small></p></div>
+              </div>
+              <div className="vital-alert"><span>!</span><p><strong>Alert ai familiari</strong><small>Battito oltre la soglia configurata · verifica richiesta</small></p></div>
+            </div>
+            <p className="vital-disclaimer">
+              Disponibilità, precisione e frequenza dipendono da dispositivo, modello, permessi e connessione.
+              Gli alert sono informativi: non garantiscono un rilevamento continuo e non sostituiscono
+              dispositivi medici prescritti o i servizi 112/118.
+            </p>
           </div>
         </section>
 
@@ -368,7 +397,7 @@ export default function Home() {
               <p className="eyebrow eyebrow-light">Fiducia prima di tutto</p>
               <h2>La famiglia deve sentirsi aiutata, non osservata.</h2>
               <p>Ogni informazione ha una fonte, ogni persona ha permessi comprensibili e ogni modifica importante può essere ricostruita.</p>
-              <div className="safety-note"><span>!</span><p><strong>Confine essenziale</strong>CareRelay non prende decisioni cliniche e non gestisce emergenze.</p></div>
+              <div className="safety-note"><span>!</span><p><strong>Confine essenziale</strong>CareRelay non prende decisioni cliniche e non garantisce assistenza automatica in caso di alert o emergenza.</p></div>
             </div>
             <div className="scope-list">
               <article><span className="scope-now">CareRelay Core</span><h3>Coordina e semplifica</h3><p>Attività, appuntamenti, note, promemoria, responsabilità e riepiloghi.</p><small>La funzione centrale del servizio</small></article>
@@ -401,7 +430,7 @@ export default function Home() {
                 <li><span>✓</span>Attività, appuntamenti e promemoria</li>
                 <li><span>✓</span>Ruoli e permessi familiari</li>
                 <li><span>✓</span>Riepiloghi e storico condiviso</li>
-                <li><span>✓</span>Integrazioni compatibili opzionali</li>
+                <li><span>✓</span>Monitoraggio e alert compatibili</li>
               </ul>
               <button className="button button-primary button-full" onClick={scrollToPilot}>Richiedi accesso alla beta →</button>
               <small className="plan-fineprint">Software in fase di validazione. Nessun hardware incluso o necessario.</small>
