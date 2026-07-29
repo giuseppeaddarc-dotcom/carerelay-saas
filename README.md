@@ -1,7 +1,9 @@
 # CareRelay
 
-CareRelay è un concept SaaS mobile-first che trasforma i dati disponibili da
-smartwatch e fitness tracker compatibili in report più chiari per la famiglia.
+CareRelay è un concept SaaS mobile-first per coordinare attività, appuntamenti,
+promemoria e responsabilità familiari. Può essere usato dall’app oppure
+parlando con un assistente AI su WhatsApp, senza cambiare le abitudini della
+famiglia.
 
 ## Sito pubblico
 
@@ -29,6 +31,5 @@ versione statica su GitHub Pages dopo ogni aggiornamento del branch `main`.
 ## Nota
 
 CareRelay è un software in validazione. Non formula diagnosi e non sostituisce
-un medico o un servizio di emergenza. Dati e report disponibili dipendono dal
-dispositivo collegato, dai sensori, dal sistema operativo, dal paese e dai
-permessi concessi.
+un medico o un servizio di emergenza. L’assistente usa solo le informazioni
+autorizzate e richiede conferma prima delle modifiche rilevanti.
