@@ -469,7 +469,7 @@ export default function Home() {
             </div>
             <article className="single-plan">
               <span className="plan-label">Piano unico</span>
-              <div className="single-price"><strong>9,99 €</strong><span>al mese<small>per spazio famiglia</small></span></div>
+              <div className="single-price"><strong>5,99 €</strong><span>al mese<small>per spazio famiglia</small></span></div>
               <p className="plan-includes">Tutte le funzioni, senza livelli premium:</p>
               <div className="plan-feature-groups">
                 <div>
