@@ -29,7 +29,7 @@ const features = [
 
 const faqItems = [
   {
-    q: "Devo aprire l’app per usare CareGive X?",
+    q: "Devo aprire l’app per usare il servizio?",
     a: "No. Puoi chiedere, ascoltare e aggiornare le attività anche parlando o scrivendo all’assistente su WhatsApp. L’app resta disponibile quando vuoi vedere il quadro completo.",
   },
   {
@@ -38,10 +38,10 @@ const faqItems = [
   },
   {
     q: "Serve uno smartwatch?",
-    a: "No. CareGive X funziona come servizio di coordinamento anche senza dispositivi. Un wearable compatibile può aggiungere i segnali che quel modello rende disponibili.",
+    a: "No. Il servizio funziona anche senza dispositivi. Un wearable compatibile può aggiungere i segnali che quel modello rende disponibili.",
   },
   {
-    q: "CareGive X dà consigli medici?",
+    q: "Il servizio dà consigli medici?",
     a: "No. Coordina informazioni e persone, ma non formula diagnosi, non prescrive terapie e non sostituisce professionisti o servizi di emergenza.",
   },
   {
@@ -65,11 +65,7 @@ function BrandMark({ className = "" }: { className?: string }) {
 }
 
 function BrandName() {
-  return (
-    <span className="brand-name">
-      CareGive <em>X</em>
-    </span>
-  );
+  return <span className="brand-name">CareGive</span>;
 }
 
 export default function Home() {
@@ -111,17 +107,11 @@ export default function Home() {
     <main>
       <a className="skip-link" href="#contenuto">Vai al contenuto</a>
 
-      <div className="concept-bar" role="note">
-        <span className="pulse-dot" aria-hidden="true" />
-        <strong>Concept in validazione</strong>
-        <span>Non è un servizio medico o di emergenza</span>
-      </div>
-
       <header className="site-header">
         <nav className="nav shell" aria-label="Navigazione principale">
           <a className="brand" href="#inizio" aria-label="CareGive X, torna all’inizio">
-            <BrandMark className="x-mark-small" />
             <BrandName />
+            <BrandMark className="x-mark-small" />
           </a>
           <button
             className="menu-toggle"
@@ -148,49 +138,54 @@ export default function Home() {
           <div className="hero-glow" aria-hidden="true" />
           <div className="shell hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow">App di coordinamento + assistente AI su WhatsApp</p>
+              <div className="hero-wordmark" aria-label="CareGive X">
+                <BrandName />
+                <BrandMark className="x-mark-hero" />
+              </div>
               <h1>
-                Prendersi cura.<br />
-                <em>Insieme.</em>
+                La cura,<br />
+                <em>coordinata.</em>
               </h1>
               <p className="hero-mission">
-                La nostra missione è dare più autonomia alle persone fragili e più tranquillità
-                a chi ogni giorno se ne prende cura.
+                Più autonomia per chi riceve assistenza. Più tranquillità per chi se ne prende cura.
               </p>
               <p className="hero-lead">
-                <strong>CareGive X mette la persona al centro e coordina tutto il resto.</strong>{" "}
-                Attività, appuntamenti, promemoria, informazioni e responsabilità diventano
-                chiari per familiari, caregiver e professionisti.
+                <strong>Un solo spazio per organizzare attività, visite, farmaci e responsabilità.</strong>{" "}
+                La famiglia vede tutto nell’app oppure chiede e aggiorna ciò che serve con un
+                semplice messaggio su WhatsApp.
               </p>
               <div className="hero-actions">
-                <button className="button button-primary" onClick={scrollToPilot}>
-                  Richiedi accesso alla beta <span aria-hidden="true">→</span>
-                </button>
-                <a className="text-link" href="#come-funziona">Scopri come funziona ↓</a>
+                <a className="button button-primary" href="#come-funziona">Scopri come funziona <span aria-hidden="true">↓</span></a>
+                <button className="text-link" onClick={scrollToPilot}>Richiedi accesso</button>
               </div>
-              <p className="hero-price-note"><strong>5,99 €</strong> al mese · un solo piano · nessun hardware obbligatorio</p>
+              <p className="hero-trust">L’AI assiste. Le persone restano al comando.</p>
             </div>
 
-            <div className="x-hero-card" aria-label="Il logo CareGive X rappresenta la persona assistita al centro e chi partecipa alla sua assistenza alle estremità">
-              <div className="x-card-top">
-                <div className="x-card-brand">
-                  <BrandMark className="x-mark-medium" />
-                  <div><BrandName /><small>X significa “for”</small></div>
+            <div className="product-hero-card" aria-label="Esempio dell’app CareGive X e dell’assistente su WhatsApp">
+              <div className="product-card-top">
+                <div>
+                  <span>Oggi</span>
+                  <strong>Il quadro familiare</strong>
                 </div>
                 <span className="live-pill"><i /> Cerchio attivo</span>
               </div>
-              <div className="x-network" role="img" aria-label="La persona assistita al centro della X; familiari, caregiver e specialista alle estremità">
-                <i className="network-arm network-arm-a" aria-hidden="true" />
-                <i className="network-arm network-arm-b" aria-hidden="true" />
-                <div className="network-node node-one"><b>I suoi cari</b><small>Famiglia</small></div>
-                <div className="network-node node-two"><b>Rete di fiducia</b><small>Altri familiari</small></div>
-                <div className="network-node node-three"><b>Caregiver</b><small>Badante · assistente</small></div>
-                <div className="network-node node-four"><b>Professionisti</b><small>Psicologi · specialisti</small></div>
-                <div className="network-center"><span>♥</span><b>Persona</b><small>assistita</small></div>
+              <div className="product-progress">
+                <p><strong>4 di 5</strong><span>attività coperte</span></p>
+                <i><b /></i>
               </div>
-              <div className="x-card-status">
-                <span aria-hidden="true">✓</span>
-                <p><strong>Tutto coperto oggi</strong><small>4 persone coordinate · ultimo aggiornamento ora</small></p>
+              <div className="product-timeline">
+                <article><time>10:00</time><span /><p><strong>Visita di controllo</strong><small>Familiare · confermato</small></p><b>✓</b></article>
+                <article><time>16:30</time><span /><p><strong>Spesa</strong><small>Caregiver · in carico</small></p><b>✓</b></article>
+                <article className="pending"><time>20:00</time><span /><p><strong>Promemoria farmaco</strong><small>Da confermare</small></p><b>!</b></article>
+              </div>
+              <div className="whatsapp-peek">
+                <div><span>WhatsApp · Assistente</span><small>ora</small></div>
+                <p className="peek-question">Cosa resta da fare oggi?</p>
+                <p className="peek-answer"><strong>Una cosa.</strong> Il promemoria delle 20:00 è ancora da confermare.</p>
+              </div>
+              <div className="product-card-bottom">
+                <span>App per vedere tutto</span>
+                <span>WhatsApp per fare prima</span>
               </div>
             </div>
           </div>
@@ -202,34 +197,52 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="meaning section">
-          <div className="shell meaning-grid">
-            <p className="meaning-wordmark">CareGive <em>X</em></p>
+        <section className="problem section">
+          <div className="shell problem-head">
             <div>
-              <p className="eyebrow">Il significato del nome</p>
-              <h2>La X significa “for”.<br />Dare cura a qualcuno.</h2>
-              <p>
-                Non una tecnologia che sostituisce le relazioni, ma un punto d’incontro che le rende
-                più semplici: la persona assistita al centro, il suo mondo intorno.
-              </p>
+              <p className="eyebrow">Il problema</p>
+              <h2>La cura quotidiana vive in troppi posti.</h2>
+            </div>
+            <p>Una nota vocale in chat, una visita sul calendario, un farmaco scritto su un foglietto. Il lavoro invisibile cresce quando nessuno ha lo stesso quadro.</p>
+          </div>
+          <div className="shell transformation">
+            <div className="chaos-panel">
+              <span className="panel-label">Prima</span>
+              <h3>28 messaggi. Tre appunti. Due calendari.</h3>
+              <div className="chaos-grid">
+                <p className="chaos-chat"><small>Chat famiglia</small><span>Chi passa domani?</span><span>La visita era alle 10?</span></p>
+                <p className="chaos-note"><small>Appunto</small><strong>farmacia<br />+ spesa?</strong></p>
+                <p className="chaos-date"><small>LUG</small><strong>16</strong><span>Controllo?</span></p>
+              </div>
+            </div>
+            <span className="transformation-arrow" aria-hidden="true">→</span>
+            <div className="clarity-panel">
+              <span className="panel-label">Con il servizio</span>
+              <h3>Un solo quadro condiviso.</h3>
+              <div className="clarity-list">
+                <p><span>✓</span><strong>Visita · 10:30</strong><small>Responsabile confermato</small></p>
+                <p><span>✓</span><strong>Farmacia · 18:00</strong><small>In carico alla famiglia</small></p>
+                <p><span>↻</span><strong>Promemoria · 20:00</strong><small>Avviso programmato</small></p>
+              </div>
+              <small>Dal rumore ad attività chiare, promemoria e risposte immediate.</small>
             </div>
           </div>
         </section>
 
         <section className="how section" id="come-funziona">
           <div className="shell section-head">
-            <div><p className="eyebrow">Due modi. Una sola esperienza.</p><h2>Parla quando hai fretta.<br />Apri l’app quando vuoi vedere tutto.</h2></div>
-            <p>CareGive X si adatta alle abitudini della famiglia. Non chiede a tutti di imparare un nuovo strumento per ogni piccola operazione.</p>
+            <div><p className="eyebrow">Come funziona</p><h2>WhatsApp per la velocità.<br />L’app per vedere tutto.</h2></div>
+            <p>Non serve imparare un nuovo strumento per ogni piccola operazione. Parli come fai già; il servizio trasforma la richiesta in qualcosa di chiaro e condiviso.</p>
           </div>
 
           <div className="shell channel-stage">
             <article className="channel-copy">
               <span className="channel-number">01</span>
-              <p className="channel-kicker">Assistente AI su WhatsApp</p>
-              <h3>Chiedi. Ascolta. Aggiorna.</h3>
-              <p>Legge le attività autorizzate, risponde alle domande, prepara nuovi task e riepiloga ciò che manca.</p>
-              <div className="demo-tabs" role="tablist" aria-label="Esempi dell’assistente">
-                {["Chiedi", "Conferma", "Aggiorna"].map((label, index) => (
+              <p className="channel-kicker">Senza aprire l’app</p>
+              <h3>Chiedi. Prendi in carico. Conferma.</h3>
+              <p>L’assistente legge solo le attività autorizzate, risponde e prepara l’aggiornamento. La decisione finale resta sempre a una persona.</p>
+              <div className="demo-tabs" role="tablist" aria-label="Fasi dell’esempio">
+                {["1. Chiedi", "2. Mi occupo io", "3. Confermato"].map((label, index) => (
                   <button
                     key={label}
                     role="tab"
@@ -243,23 +256,22 @@ export default function Home() {
               </div>
             </article>
             <div className="message-demo" role="tabpanel" aria-live="polite">
-              <div className="message-demo-top"><BrandMark className="x-mark-tiny" /><strong>CareGive X</strong><span>ora</span></div>
+              <div className="message-demo-top"><strong>Assistente CareGive</strong><BrandMark className="x-mark-tiny" /><span>ora</span></div>
               {demoStep === 0 && (
                 <div className="message-thread">
-                  <p className="message-user">Cosa c’è da fare oggi per mamma?</p>
-                  <div className="message-ai"><small>Riepilogo di oggi</small><strong>Ci sono 3 attività</strong><span>10:00 · Parrucchiere — figlia</span><span>16:30 · Spesa — familiare</span><span>20:00 · Promemoria — da confermare</span></div>
+                  <p className="message-user">Chi accompagna mamma alla visita di domani?</p>
+                  <div className="message-ai"><small>Visita · domani, 10:30</small><strong>Nessun responsabile confermato</strong><span>Puoi prenderla in carico oppure avvisare il cerchio.</span></div>
                 </div>
               )}
               {demoStep === 1 && (
                 <div className="message-thread">
-                  <p className="message-user">Passo io in farmacia alle 18.</p>
-                  <div className="message-ai"><small>Proposta pronta</small><strong>Farmacia · oggi, 18:00</strong><span>Responsabile: tu</span><div className="message-actions"><b>Conferma</b><b>Modifica</b></div></div>
+                  <p className="message-user">Me ne occupo io.</p>
+                  <div className="message-ai"><small>Proposta pronta</small><strong>Visita · domani, 10:30</strong><span>Responsabile: tu</span><div className="message-actions"><b>Conferma</b><b>Modifica</b></div></div>
                 </div>
               )}
               {demoStep === 2 && (
                 <div className="message-thread">
-                  <p className="message-user">Dì a tutti che mamma ha già cenato.</p>
-                  <div className="message-ai message-confirmed"><i>✓</i><small>Aggiornamento condiviso</small><strong>“Ha già cenato.”</strong><span>Visibile al cerchio autorizzato</span></div>
+                  <div className="message-ai message-confirmed"><i>✓</i><small>Responsabilità confermata</small><strong>Tu accompagni mamma</strong><span>Visita · domani, 10:30 · cerchio aggiornato</span></div>
                 </div>
               )}
               <div className="message-input"><span>Scrivi o invia una nota vocale</span><b>●</b></div>
@@ -267,7 +279,7 @@ export default function Home() {
           </div>
 
           <div className="shell app-strip">
-            <div><span className="channel-number">02</span><p className="channel-kicker">App CareGive X</p><h3>Il quadro completo, sempre leggibile.</h3></div>
+            <div><span className="channel-number">02</span><p className="channel-kicker">L’app completa</p><h3>Il quadro completo, sempre leggibile.</h3></div>
             <div className="app-strip-list">
               <p><span>Oggi</span><strong>5 attività · 4 coperte</strong></p>
               <p><span>Settimana</span><strong>3 appuntamenti</strong></p>
@@ -321,7 +333,7 @@ export default function Home() {
             <div className="medication-copy">
               <p className="eyebrow eyebrow-light">Promemoria farmaci</p>
               <h3>Il promemoria giusto.<br />Al momento giusto.</h3>
-              <p>Una persona autorizzata inserisce il promemoria e l’orario. CareGive X avvisa sull’app o su WhatsApp, chiede conferma e aggiorna il cerchio familiare.</p>
+              <p>Una persona autorizzata inserisce il promemoria e l’orario. Il servizio avvisa sull’app o su WhatsApp, chiede conferma e aggiorna il cerchio familiare.</p>
               <div className="medication-flow" aria-label="Inserisci, ricorda, conferma">
                 <span>Inserisci</span><i aria-hidden="true">→</i><span>Ricorda</span><i aria-hidden="true">→</i><span>Conferma</span>
               </div>
@@ -335,7 +347,7 @@ export default function Home() {
               <div className="medication-actions" aria-hidden="true"><span>Fatto</span><span>Ricordamelo dopo</span></div>
               <div className="medication-status"><span aria-hidden="true">✓</span><p><strong>Confermato dalla persona assistita</strong><small>Il cerchio familiare è aggiornato</small></p></div>
             </div>
-            <p className="medication-boundary">CareGive X ricorda ciò che è stato inserito e confermato. Non prescrive, non modifica dosi e non decide cosa fare in caso di mancata assunzione.</p>
+            <p className="medication-boundary">Ricorda ciò che è stato inserito e confermato. Non prescrive, non modifica dosi e non decide cosa fare in caso di mancata assunzione.</p>
           </div>
         </section>
 
@@ -363,7 +375,7 @@ export default function Home() {
             <div className="safety-copy">
               <p className="eyebrow eyebrow-light">Fiducia, prima di tutto</p>
               <h2>La tecnologia aiuta.<br />Le persone decidono.</h2>
-              <p>CareGive X nasce per rendere il coordinamento più semplice e verificabile, con confini comprensibili fin dal primo utilizzo.</p>
+              <p>Il servizio rende il lavoro condiviso più semplice e verificabile, con confini comprensibili fin dal primo utilizzo.</p>
               <div className="safety-note"><span>!</span><p><strong>Non è un dispositivo medico.</strong>Non usarlo per diagnosi, decisioni terapeutiche o richieste di emergenza.</p></div>
             </div>
             <div className="principle-list">
@@ -382,9 +394,9 @@ export default function Home() {
             <p>Una cifra semplice per uno spazio famiglia completo.</p>
           </div>
           <div className="shell price-card">
-            <div className="price-main"><span>CareGive X</span><strong>5,99 €</strong><small>al mese · per spazio famiglia</small></div>
+            <div className="price-main"><span>Piano unico</span><strong>5,99 €</strong><small>al mese · per spazio famiglia</small></div>
             <div className="price-features">
-              <p><span>✓</span>App CareGive X completa</p>
+              <p><span>✓</span>App completa</p>
               <p><span>✓</span>Assistente AI su WhatsApp</p>
               <p><span>✓</span>Attività, calendario e responsabilità</p>
               <p><span>✓</span>Promemoria, routine e farmaci</p>
@@ -437,7 +449,7 @@ export default function Home() {
                     <option>Professionista o partner</option>
                   </select>
                 </label>
-                <label className="consent"><input type="checkbox" required /><span>Ho compreso che CareGive X è un concept e non inserirò dati sanitari nel modulo.</span></label>
+                <label className="consent"><input type="checkbox" required /><span>Ho compreso che il servizio è un concept e non inserirò dati sanitari nel modulo.</span></label>
                 <button className="button button-primary button-full" type="submit">Prepara la richiesta →</button>
               </form>
             ) : (
@@ -448,7 +460,7 @@ export default function Home() {
                 <pre>{brief}</pre>
                 <button className="button button-primary button-full" onClick={copyBrief}>{copied ? "Copiato ✓" : "Copia la richiesta"}</button>
                 <button className="text-button" onClick={() => setSubmitted(false)}>Modifica i dati</button>
-                <small>Nessun dato è stato inviato o salvato da CareGive X.</small>
+                <small>Nessun dato è stato inviato o salvato dal sito.</small>
               </div>
             )}
           </div>
@@ -457,8 +469,8 @@ export default function Home() {
 
       <footer>
         <div className="shell footer-grid">
-          <div><a className="brand footer-brand" href="#inizio"><BrandMark className="x-mark-small" /><BrandName /></a><p>Care for someone. Together.</p></div>
-          <div className="footer-note"><strong>Software in fase di validazione — non è un dispositivo medico.</strong><p>Non usare CareGive X per diagnosi, decisioni terapeutiche o richieste di emergenza.</p></div>
+          <div><a className="brand footer-brand" href="#inizio"><BrandName /><BrandMark className="x-mark-small" /></a><p>Care for someone. Together.</p></div>
+          <div className="footer-note"><strong>Software in fase di validazione — non è un dispositivo medico.</strong><p>Non usare il servizio per diagnosi, decisioni terapeutiche o richieste di emergenza.</p></div>
           <div className="footer-links"><a href="#come-funziona">Come funziona</a><a href="#cerchio">Il cerchio</a><a href="#pilot">Accesso beta</a></div>
         </div>
         <div className="shell footer-bottom"><span>© 2026 CareGive X concept</span><span>La persona al centro. Tutto il resto, coordinato.</span></div>
