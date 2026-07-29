@@ -3,7 +3,7 @@ import "./globals.css";
 
 const title = "CareRelay — La cura, coordinata";
 const description =
-  "CareRelay coordina attività, appuntamenti, promemoria e responsabilità familiari, anche tramite un assistente AI su WhatsApp. Un solo piano da 9,99 € al mese.";
+  "CareRelay coordina attività, appuntamenti, promemoria e responsabilità familiari, anche tramite un assistente AI su WhatsApp.";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   "https://carerelay-concept.giuseppe9696.chatgpt.site/";

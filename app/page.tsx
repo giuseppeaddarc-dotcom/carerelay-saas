@@ -59,8 +59,8 @@ const faqs = [
     a: "No. Organizza informazioni, attività e promemoria inseriti dalle persone autorizzate. Non formula diagnosi, non cambia terapie e non sostituisce medici o servizi di emergenza.",
   },
   {
-    q: "Cosa comprende il piano da 9,99 €?",
-    a: "Lo spazio famiglia, l’assistente AI su WhatsApp, l’app CareRelay, attività condivise, promemoria, riepiloghi, ruoli e integrazioni compatibili.",
+    q: "Cosa comprende l’abbonamento?",
+    a: "Lo spazio famiglia, l’assistente AI su WhatsApp, l’app CareRelay, attività condivise, appuntamenti, promemoria, note, riepiloghi, ruoli, storico, alert e integrazioni compatibili.",
   },
 ];
 
@@ -128,8 +128,9 @@ export default function Home() {
           <div className={`nav-links ${menuOpen ? "is-open" : ""}`} id="nav-links">
             <a href="#come-funziona" onClick={() => setMenuOpen(false)}>Come funziona</a>
             <a href="#assistente" onClick={() => setMenuOpen(false)}>Assistente AI</a>
+            <a href="#cerchio" onClick={() => setMenuOpen(false)}>Cerchio di cura</a>
             <a href="#fiducia" onClick={() => setMenuOpen(false)}>Sicurezza</a>
-            <a href="#abbonamento" onClick={() => setMenuOpen(false)}>9,99 €/mese</a>
+            <a href="#abbonamento" onClick={() => setMenuOpen(false)}>Abbonamento</a>
             <button className="button button-dark button-small" onClick={scrollToPilot}>
               Richiedi accesso
             </button>
@@ -345,6 +346,40 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="circle-section section" id="cerchio">
+          <div className="shell circle-layout">
+            <div
+              className="family-orbit"
+              role="img"
+              aria-label="Anna, persona assistita, al centro del cerchio formato da Giulia, Marco, Alina e la dottoressa Riva"
+            >
+              <span className="family-line line-one" aria-hidden="true" />
+              <span className="family-line line-two" aria-hidden="true" />
+              <span className="family-line line-three" aria-hidden="true" />
+              <span className="family-line line-four" aria-hidden="true" />
+              <div className="orbit-label label-one"><b>Giulia</b><small>Figlia · amministratrice</small></div>
+              <div className="orbit-label label-two"><b>Marco</b><small>Figlio · familiare</small></div>
+              <div className="orbit-label label-three"><b>Alina</b><small>Caregiver</small></div>
+              <div className="orbit-label label-four"><b>Dott.ssa Riva</b><small>Professionista · accesso mirato</small></div>
+              <div className="family-center"><span aria-hidden="true">♥</span><b>Anna</b><small>Persona assistita</small></div>
+            </div>
+            <div className="circle-copy">
+              <p className="eyebrow">Il cerchio di cura</p>
+              <h2>Anna al centro. Tutti gli altri, coordinati.</h2>
+              <p>
+                Familiari, caregiver e professionisti collaborano nello stesso spazio.
+                Ognuno vede ciò che gli serve, sa cosa deve fare e può aggiornare gli altri
+                dall’app o tramite l’assistente su WhatsApp.
+              </p>
+              <div className="permission-list">
+                <div><span>◎</span><p><strong>Un ruolo per ogni persona</strong><small>Accessi diversi per familiari, caregiver e professionisti.</small></p></div>
+                <div><span>✓</span><p><strong>Responsabilità leggibili</strong><small>È sempre chiaro chi ha preso in carico o confermato un’attività.</small></p></div>
+                <div><span>↻</span><p><strong>Aggiornamenti condivisi</strong><small>Le informazioni utili arrivano al cerchio senza rincorrere le chat.</small></p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="channels section">
           <div className="shell section-head">
             <div><p className="eyebrow">Usalo come preferisci</p><h2>WhatsApp per la velocità. L’app per vedere tutto.</h2></div>
@@ -424,14 +459,36 @@ export default function Home() {
             <article className="single-plan">
               <span className="plan-label">Piano unico</span>
               <div className="single-price"><strong>9,99 €</strong><span>al mese<small>per spazio famiglia</small></span></div>
-              <ul>
-                <li><span>✓</span>Assistente AI su WhatsApp</li>
-                <li><span>✓</span>App CareRelay completa</li>
-                <li><span>✓</span>Attività, appuntamenti e promemoria</li>
-                <li><span>✓</span>Ruoli e permessi familiari</li>
-                <li><span>✓</span>Riepiloghi e storico condiviso</li>
-                <li><span>✓</span>Monitoraggio e alert compatibili</li>
-              </ul>
+              <p className="plan-includes">Tutte le funzioni, senza livelli premium:</p>
+              <div className="plan-feature-groups">
+                <div>
+                  <strong>Coordina</strong>
+                  <ul>
+                    <li><span>✓</span>Attività e responsabilità</li>
+                    <li><span>✓</span>Appuntamenti e calendario</li>
+                    <li><span>✓</span>Promemoria e routine</li>
+                    <li><span>✓</span>Note e documenti condivisi</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Assiste</strong>
+                  <ul>
+                    <li><span>✓</span>Assistente AI su WhatsApp</li>
+                    <li><span>✓</span>Testo, voce e domande</li>
+                    <li><span>✓</span>Riepiloghi e conferme</li>
+                    <li><span>✓</span>App CareRelay completa</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Connette e protegge</strong>
+                  <ul>
+                    <li><span>✓</span>Ruoli e permessi</li>
+                    <li><span>✓</span>Storico delle modifiche</li>
+                    <li><span>✓</span>Monitoraggio compatibile</li>
+                    <li><span>✓</span>Alert e integrazioni opzionali</li>
+                  </ul>
+                </div>
+              </div>
               <button className="button button-primary button-full" onClick={scrollToPilot}>Richiedi accesso alla beta →</button>
               <small className="plan-fineprint">Software in fase di validazione. Nessun hardware incluso o necessario.</small>
             </article>
@@ -461,7 +518,7 @@ export default function Home() {
               <p className="eyebrow eyebrow-light">Accesso anticipato</p>
               <h2>Porta più chiarezza nella cura quotidiana.</h2>
               <p>Stiamo selezionando le prime famiglie per validare il coordinamento, l’utilità dell’assistente e la semplicità dell’esperienza.</p>
-              <div className="pilot-points"><span>9,99 € al mese al lancio</span><span>WhatsApp + app</span><span>Nessun hardware obbligatorio</span></div>
+              <div className="pilot-points"><span>Piano unico</span><span>WhatsApp + app</span><span>Nessun hardware obbligatorio</span></div>
               <div className="no-send-note"><strong>Trasparenza sul contatto</strong><p>Il modulo prepara un riepilogo da copiare. Nessun dato viene inviato o salvato dal sito.</p></div>
             </div>
 
@@ -495,11 +552,6 @@ export default function Home() {
             )}
           </div>
         </section>
-      </div>
-
-      <div className="mobile-cta" aria-label="Piano CareRelay">
-        <div><strong>9,99 €</strong><small>al mese</small></div>
-        <button onClick={scrollToPilot}>Richiedi accesso</button>
       </div>
 
       <footer>
