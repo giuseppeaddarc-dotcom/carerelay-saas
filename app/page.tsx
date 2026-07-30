@@ -328,8 +328,14 @@ export default function Home() {
 
         <section className="management section" id="quotidiano">
           <div className="shell section-head">
-            <div><p className="eyebrow">La regia quotidiana</p><h2>Dalla preoccupazione<br />a una giornata che regge.</h2></div>
-            <p>Il servizio non sostituisce la cura. Toglie attrito a chi la rende possibile, facendo emergere cosa serve, chi può farlo e cosa è già stato fatto.</p>
+            <div>
+              <p className="eyebrow">La regia quotidiana</p>
+              <h2 className="management-title">
+                <span>Meno cose da rincorrere.</span>
+                <span>Più tempo per esserci.</span>
+              </h2>
+            </div>
+            <p>Attività, visite, note, promemoria e responsabilità in un unico quadro. Così è chiaro cosa serve, chi può occuparsene e cosa è già stato fatto.</p>
           </div>
           <div className="shell feature-grid">
             {features.map((feature) => (

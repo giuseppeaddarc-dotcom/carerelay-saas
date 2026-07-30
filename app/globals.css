@@ -269,6 +269,8 @@ a { color: inherit; text-decoration: none; }
 .permission-list small { color: var(--muted); font-size: 9px; }
 
 .management { background: var(--paper); }
+.management-title span { display: block; }
+.management-title span:last-child { color: var(--aqua-strong); }
 .feature-grid { margin-top: 65px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .feature-grid article { min-height: 260px; padding: 27px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .feature-grid article > span { color: var(--aqua-strong); font-size: 9px; font-weight: 900; }
