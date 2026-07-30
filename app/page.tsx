@@ -147,12 +147,11 @@ export default function Home() {
                 <em>coordinata.</em>
               </h1>
               <p className="hero-mission">
-                Quando una persona ha bisogno, nessuno dovrebbe chiedersi chi se ne sta occupando.
+                Più autonomia per la persona assistita. Più tranquillità per chi le sta vicino.
               </p>
               <p className="hero-lead">
-                <strong>CareGive riunisce il suo cerchio in un unico quadro.</strong>{" "}
-                Visite, farmaci, attività e responsabilità diventano visibili a tutti:
-                nell’app o con un semplice messaggio su WhatsApp.
+                <strong>Ogni giorno qualcuno deve ricordare una visita, confermare un farmaco o capire chi passerà.</strong>{" "}
+                CareGive riunisce tutto in un unico quadro, nell’app o con un semplice messaggio su WhatsApp.
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#come-funziona">Scopri come funziona <span aria-hidden="true">↓</span></a>
@@ -200,32 +199,39 @@ export default function Home() {
         <section className="problem section">
           <div className="shell problem-head">
             <div>
-              <p className="eyebrow">Da dove nasce</p>
-              <h2>Il problema non è voler esserci. È riuscire a coordinarsi.</h2>
+              <p className="eyebrow">Il problema</p>
+              <h2>La cura quotidiana vive in troppi posti.</h2>
             </div>
-            <p>Una visita resta in una chat, un farmaco su un foglietto, una commissione nella testa di qualcuno. Così una persona finisce per ricordare tutto, mentre gli altri non sanno dove aiutare.</p>
+            <p>Una nota vocale in una chat, l’orario di una visita su un foglio, una commissione affidata a voce. Quando le persone sono stanche, la frammentazione diventa lavoro invisibile.</p>
           </div>
-          <div className="shell transformation">
-            <div className="chaos-panel">
-              <span className="panel-label">Prima</span>
-              <h3>28 messaggi. Tre appunti. Due calendari.</h3>
-              <div className="chaos-grid">
-                <p className="chaos-chat"><small>Chat famiglia</small><span>Chi passa domani?</span><span>La visita era alle 10?</span></p>
-                <p className="chaos-note"><small>Appunto</small><strong>farmacia<br />+ spesa?</strong></p>
-                <p className="chaos-date"><small>LUG</small><strong>16</strong><span>Controllo?</span></p>
-              </div>
-            </div>
-            <span className="transformation-arrow" aria-hidden="true">→</span>
-            <div className="clarity-panel">
-              <span className="panel-label">Con il servizio</span>
-              <h3>Un solo quadro condiviso.</h3>
-              <div className="clarity-list">
-                <p><span>✓</span><strong>Visita · 10:30</strong><small>Responsabile confermato</small></p>
-                <p><span>✓</span><strong>Farmacia · 18:00</strong><small>In carico alla famiglia</small></p>
-                <p><span>↻</span><strong>Promemoria · 20:00</strong><small>Avviso programmato</small></p>
-              </div>
-              <small>La stessa famiglia. Meno messaggi da rincorrere. Più responsabilità chiare.</small>
-            </div>
+          <div className="shell chaos-board" aria-label="Esempio del disordine che CareGive aiuta a coordinare">
+            <article className="chaos-card chaos-chat-card">
+              <div className="chaos-card-head"><span>Chat famiglia</span><small>28 messaggi</small></div>
+              <p className="mini-bubble left">Chi passa domani?</p>
+              <p className="mini-bubble right">Forse io dopo le 17</p>
+              <p className="mini-bubble left">La badante ha cambiato turno</p>
+              <p className="mini-bubble right muted-bubble">La visita era alle 10?</p>
+              <span className="unread-pill">12 non letti</span>
+            </article>
+            <article className="chaos-card chaos-postit">
+              <span className="postit-tape" aria-hidden="true" />
+              <p>Martedì<br />spesa + farmacia?<br /><s>ore 16</s> ore 18</p>
+              <small>Appunto sul frigorifero</small>
+            </article>
+            <article className="chaos-card chaos-calendar-card">
+              <div className="calendar-sheet"><span>LUG</span><strong>16</strong></div>
+              <p>Visita di controllo</p>
+              <small>Non è chiaro chi accompagna</small>
+            </article>
+            <article className="chaos-card chaos-call-card">
+              <span className="call-symbol" aria-hidden="true">↗</span>
+              <div><small>Chiamata · 18:42</small><strong>Nessuna risposta</strong><p>Secondo tentativo</p></div>
+              <b>Richiama</b>
+            </article>
+            <article className="chaos-solution">
+              <BrandMark className="x-mark-medium" />
+              <p><strong>Tutto questo non dovrebbe stare nella testa di una sola persona.</strong> CareGive trasforma il rumore in attività confermate, responsabilità chiare e un riepilogo condiviso.</p>
+            </article>
           </div>
         </section>
 
@@ -285,6 +291,11 @@ export default function Home() {
               <p><span>Cerchio</span><strong>Tutti aggiornati</strong></p>
               <p><span>Promemoria</span><strong>Automatico</strong></p>
             </div>
+          </div>
+          <div className="shell habit-note">
+            <p className="eyebrow">Un gesto naturale</p>
+            <h3>Nessun manuale.<br />Nessuna nuova abitudine.</h3>
+            <p>Scrivi o parla su WhatsApp come fai già. Apri l’app soltanto quando vuoi vedere l’intera giornata, le responsabilità e gli aggiornamenti del cerchio.</p>
           </div>
         </section>
 
@@ -374,8 +385,8 @@ export default function Home() {
           <div className="shell safety-grid">
             <div className="safety-copy">
               <p className="eyebrow eyebrow-light">Fiducia, prima di tutto</p>
-              <h2>La tecnologia aiuta.<br />Le persone decidono.</h2>
-              <p>Il servizio rende il lavoro condiviso più semplice e verificabile, con confini comprensibili fin dal primo utilizzo.</p>
+              <h2>La fiducia non è una funzione.<br />È l’architettura.</h2>
+              <p>Il servizio rende il lavoro condiviso più semplice e verificabile. Permessi, conferme e confini devono essere comprensibili fin dal primo utilizzo.</p>
               <div className="safety-note"><span>!</span><p><strong>Non è un dispositivo medico.</strong>Non usarlo per diagnosi, decisioni terapeutiche o richieste di emergenza.</p></div>
             </div>
             <div className="principle-list">
