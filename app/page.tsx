@@ -147,7 +147,8 @@ export default function Home() {
                 <em>coordinata.</em>
               </h1>
               <p className="hero-mission">
-                Più autonomia per la persona assistita. Più tranquillità per chi le sta vicino.
+                Più autonomia per la persona assistita.<br />
+                Più tranquillità per chi le sta vicino.
               </p>
               <p className="hero-lead">
                 <strong>Ogni giorno qualcuno deve ricordare una visita, confermare un farmaco o capire chi passerà.</strong>{" "}
