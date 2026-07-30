@@ -126,8 +126,8 @@ export default function Home() {
           <div className={`nav-links ${menuOpen ? "is-open" : ""}`} id="nav-links">
             <a href="#come-funziona" onClick={() => setMenuOpen(false)}>Come funziona</a>
             <a href="#cerchio" onClick={() => setMenuOpen(false)}>Il cerchio</a>
+            <a href="#quotidiano" onClick={() => setMenuOpen(false)}>Cosa coordina</a>
             <a href="#sicurezza" onClick={() => setMenuOpen(false)}>Sicurezza</a>
-            <a href="#piano" onClick={() => setMenuOpen(false)}>5,99 €</a>
             <button className="button button-dark button-small" onClick={scrollToPilot}>Richiedi accesso</button>
           </div>
         </nav>
@@ -325,7 +325,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="management section">
+        <section className="management section" id="quotidiano">
           <div className="shell section-head">
             <div><p className="eyebrow">La regia quotidiana</p><h2>Dalla preoccupazione<br />a una giornata che regge.</h2></div>
             <p>Il servizio non sostituisce la cura. Toglie attrito a chi la rende possibile, facendo emergere cosa serve, chi può farlo e cosa è già stato fatto.</p>
@@ -443,7 +443,7 @@ export default function Home() {
               <p className="eyebrow eyebrow-light">Accesso anticipato</p>
               <h2>La cura può essere più semplice da coordinare.</h2>
               <p>Stiamo selezionando le prime famiglie per validare l’esperienza, l’utilità dell’assistente e la chiarezza del servizio.</p>
-              <div className="pilot-points"><span>5,99 € al mese</span><span>WhatsApp + app</span><span>Nessun hardware obbligatorio</span></div>
+              <div className="pilot-points"><span>Un solo piano</span><span>WhatsApp + app</span><span>Nessun hardware obbligatorio</span></div>
               <div className="no-send-note"><strong>Trasparenza sul contatto</strong><p>Il modulo prepara un riepilogo da copiare. Nessun dato viene inviato o salvato dal sito.</p></div>
             </div>
             {!submitted ? (

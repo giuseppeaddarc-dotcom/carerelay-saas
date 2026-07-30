@@ -14,6 +14,13 @@ soglia configurata.
 
 <https://giuseppeaddarc-dotcom.github.io/carerelay-saas/>
 
+## Riferimento CareRelay conservato
+
+Il concept CareRelay resta separato e consultabile qui:
+
+- sito: <https://giuseppeaddarc-dotcom.github.io/Carerelay/>
+- repository: <https://github.com/giuseppeaddarc-dotcom/Carerelay>
+
 ## Sviluppo locale
 
 Richiede Node.js 22 o successivo e pnpm.
